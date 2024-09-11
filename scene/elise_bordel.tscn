@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://8rt144y7vgf1"]
+[gd_scene load_steps=24 format=3 uid="uid://8rt144y7vgf1"]
 
+[ext_resource type="Script" path="res://script/elise_bordel.gd" id="1_6miyp"]
 [ext_resource type="Material" uid="uid://xo2ofojwlug8" path="res://script/shader_outline.tres" id="1_xc3ox"]
 [ext_resource type="PackedScene" uid="uid://bwjim2twt32uf" path="res://scene/mamie.tscn" id="2_xkmfd"]
 [ext_resource type="Shader" path="res://script/shader_outline_V2.gdshader" id="3_y1xnc"]
@@ -63,7 +64,16 @@ shader_parameter/outline_color = Color(0.972549, 0, 0, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_2ttqq"]
 material = SubResource("StandardMaterial3D_hnxxs")
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_40alt"]
+metallic = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_aaft2"]
+material = SubResource("StandardMaterial3D_40alt")
+
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("mamie", "area")]
+script = ExtResource("1_6miyp")
+mamie = NodePath("Mamie/Controlleur_mamie")
+area = NodePath("Nintendo DS/Objet_briilance")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_tidyd")
@@ -87,6 +97,12 @@ shape = SubResource("BoxShape3D_2oyde")
 [node name="Mamie" parent="." instance=ExtResource("2_xkmfd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.86139, 0)
 
+[node name="Camera3D" parent="Mamie" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2)
+
+[node name="Epaule_Droite" parent="Mamie" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2)
+
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.41001, 10.0242, -7.53462)
 
@@ -107,9 +123,15 @@ light_color = Color(1, 0.431373, 0.141176, 1)
 [node name="Nintendo DS" parent="." instance=ExtResource("4_4rggj")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.07118, 0.991169, -1.89205)
 
-[node name="Node3D" parent="Nintendo DS" instance=ExtResource("4_q1jdm")]
+[node name="Objet_briilance" parent="Nintendo DS" instance=ExtResource("4_q1jdm")]
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.98586, 2.80168, 0)
 material_overlay = SubResource("ShaderMaterial_b018c")
 mesh = SubResource("BoxMesh_2ttqq")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2545, 1.06953, 0)
+mesh = SubResource("BoxMesh_aaft2")
+
+[editable path="Mamie"]
