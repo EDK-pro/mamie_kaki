@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwjim2twt32uf"]
+
+[ext_resource type="Script" path="res://script/mamie.gd" id="1_awg1j"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fjh2q"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kux4g"]
+
+[node name="Mamie" type="Node3D"]
+
+[node name="Controlleur_mamie" type="CharacterBody3D" parent="." node_paths=PackedStringArray("bras_camera")]
+script = ExtResource("1_awg1j")
+bras_camera = NodePath("../Bras_Camera")
+
+[node name="Modele_mamie" type="MeshInstance3D" parent="Controlleur_mamie"]
+mesh = SubResource("CapsuleMesh_fjh2q")
+
+[node name="Collision_mamie" type="CollisionShape3D" parent="Controlleur_mamie"]
+shape = SubResource("CapsuleShape3D_kux4g")
+
+[node name="Bras_Camera" type="SpringArm3D" parent="."]
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="Bras_Camera"]

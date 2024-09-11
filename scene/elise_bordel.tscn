@@ -1,0 +1,115 @@
+[gd_scene load_steps=21 format=3 uid="uid://8rt144y7vgf1"]
+
+[ext_resource type="Material" uid="uid://xo2ofojwlug8" path="res://script/shader_outline.tres" id="1_xc3ox"]
+[ext_resource type="PackedScene" uid="uid://bwjim2twt32uf" path="res://scene/mamie.tscn" id="2_xkmfd"]
+[ext_resource type="Shader" path="res://script/shader_outline_V2.gdshader" id="3_y1xnc"]
+[ext_resource type="PackedScene" uid="uid://chi586ssubep1" path="res://scene/Nintendo DS.glb" id="4_4rggj"]
+[ext_resource type="PackedScene" uid="uid://dw3vpvlrsjxfs" path="res://scene/objets_base.tscn" id="4_q1jdm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xmwlm"]
+sky_top_color = Color(0.370342, 0.348846, 0.908722, 1)
+sky_horizon_color = Color(4.04298e-06, 0.744401, 0.777764, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_6ggiu"]
+sky_material = SubResource("ProceduralSkyMaterial_xmwlm")
+
+[sub_resource type="Environment" id="Environment_tidyd"]
+background_mode = 2
+sky = SubResource("Sky_6ggiu")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_scs55"]
+next_pass = ExtResource("1_xc3ox")
+albedo_color = Color(0.282353, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qxi76"]
+material = SubResource("StandardMaterial3D_scs55")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fstwn"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kx6ug"]
+as_normal_map = true
+noise = SubResource("FastNoiseLite_fstwn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cv2u5"]
+albedo_color = Color(1, 1, 0.254902, 1)
+albedo_texture = SubResource("NoiseTexture2D_kx6ug")
+
+[sub_resource type="BoxMesh" id="BoxMesh_bpy0x"]
+material = SubResource("StandardMaterial3D_cv2u5")
+size = Vector3(50, 0.3, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2oyde"]
+size = Vector3(50, 0.3, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ck4sf"]
+size = Vector3(10, 0.3, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_34dap"]
+size = Vector3(10, 0.3, 20)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b018c"]
+render_priority = 0
+shader = ExtResource("3_y1xnc")
+shader_parameter/normal_threshold = 0.1
+shader_parameter/depth_threshold = 0.05
+shader_parameter/depth_artifact_correction_coef = 2.0
+shader_parameter/outline_color = Color(0.972549, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hnxxs"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2ttqq"]
+material = SubResource("StandardMaterial3D_hnxxs")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tidyd")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.551446, 1.43444)
+mesh = SubResource("BoxMesh_qxi76")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_bpy0x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_2oyde")
+
+[node name="Mamie" parent="." instance=ExtResource("2_xkmfd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.86139, 0)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.41001, 10.0242, -7.53462)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
+mesh = SubResource("BoxMesh_ck4sf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+shape = SubResource("BoxShape3D_34dap")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.23693, 2.89365, 0.401598)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Node3D/MeshInstance3D"]
+light_color = Color(1, 0.431373, 0.141176, 1)
+
+[node name="Nintendo DS" parent="." instance=ExtResource("4_4rggj")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.07118, 0.991169, -1.89205)
+
+[node name="Node3D" parent="Nintendo DS" instance=ExtResource("4_q1jdm")]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.98586, 2.80168, 0)
+material_overlay = SubResource("ShaderMaterial_b018c")
+mesh = SubResource("BoxMesh_2ttqq")

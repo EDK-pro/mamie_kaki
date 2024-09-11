@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dw3vpvlrsjxfs"]
+
+[ext_resource type="Material" uid="uid://xo2ofojwlug8" path="res://script/shader_outline.tres" id="1_au2pq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qukvp"]
+next_pass = ExtResource("1_au2pq")
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dw744"]
+material = SubResource("StandardMaterial3D_qukvp")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_dw744")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MeshInstance3D"]
+light_color = Color(1, 0.431373, 0.141176, 1)
