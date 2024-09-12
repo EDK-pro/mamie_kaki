@@ -6,8 +6,8 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_l1xyf"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_nbc5r"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="4_eic3h"]
-[ext_resource type="PackedScene" uid="uid://chi586ssubep1" path="res://scene/Nintendo DS.glb" id="7_agyvh"]
-[ext_resource type="PackedScene" uid="uid://g7und5rhuylg" path="res://scene/table_chaise.glb" id="7_mlwqy"]
+[ext_resource type="PackedScene" uid="uid://chi586ssubep1" path="res://asset/asset_visuel/Nintendo DS.glb" id="7_agyvh"]
+[ext_resource type="PackedScene" uid="uid://g7und5rhuylg" path="res://asset/asset_visuel/table_chaise.glb" id="7_mlwqy"]
 [ext_resource type="PackedScene" uid="uid://dw3vpvlrsjxfs" path="res://scene/objets_base.tscn" id="8_mqrtj"]
 [ext_resource type="PackedScene" uid="uid://cc1jveh1jjmrc" path="res://scene/Texte_Souvenir.tscn" id="10_mlifd"]
 [ext_resource type="AudioStream" uid="uid://bxhbtg748m7gb" path="res://addons/phantom_camera/assets/asset sonore/cat sound 1.ogg" id="11_i8rbw"]
@@ -43,14 +43,29 @@ sky = SubResource("Sky_8hsvg")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_avpkt"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_5rbto"]
-size = Vector3(20, 25, 0.2)
+material = SubResource("StandardMaterial3D_avpkt")
+size = Vector3(25, 25, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mfogb"]
+size = Vector3(25, 25, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3762b"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_k43oc"]
+material = SubResource("StandardMaterial3D_3762b")
 size = Vector3(20, 0.3, 15)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_f4sxw"]
+size = Vector3(20, 0.3, 15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ijv2"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_tsk8i"]
-size = Vector3(20, 10, 0.3)
+material = SubResource("StandardMaterial3D_5ijv2")
+size = Vector3(20, 9, 0.3)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_1wuyl"]
 noise_type = 3
@@ -167,6 +182,18 @@ streams_count = 2
 stream_0/stream = ExtResource("23_kqqrw")
 stream_1/stream = ExtResource("24_5apos")
 
+[sub_resource type="BoxMesh" id="BoxMesh_p1o7i"]
+size = Vector3(20, 1, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2p1pb"]
+size = Vector3(20, 1, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_87xni"]
+size = Vector3(6, 6, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_y5t1p"]
+size = Vector3(6, 6, 0.5)
+
 [node name="Greyblock_scene" type="Node3D" node_paths=PackedStringArray("pcam_milieu", "pcam_gauche", "pcam_droite", "cam_proche", "mamie")]
 script = ExtResource("1_a1d8j")
 pcam_milieu = NodePath("PhantomCameraMilieu")
@@ -182,11 +209,15 @@ environment = SubResource("Environment_pnk46")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.741642, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29952, 0, -10)
 mesh = SubResource("BoxMesh_5rbto")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2/MeshInstance3D"]
+shape = SubResource("BoxShape3D_mfogb")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+visible = false
 mesh = SubResource("BoxMesh_5rbto")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="StaticBody3D2"]
@@ -199,8 +230,11 @@ mesh = SubResource("BoxMesh_5rbto")
 skeleton = NodePath("../MeshInstance3D2")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 0.968152, 0.250363, 0, -0.250363, 0.968152, 0, 3.7955, -2.8524)
+transform = Transform3D(1, 0, 0, 0, 0.968152, 0.250363, 0, -0.250363, 0.968152, 1.15509, 3.7955, -2.85374)
 mesh = SubResource("BoxMesh_k43oc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2/MeshInstance3D6"]
+shape = SubResource("BoxShape3D_f4sxw")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="StaticBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 0.573462, 0.819232, 0, -0.819232, 0.573462, 0, 4.03618, 6.99729)
@@ -215,7 +249,12 @@ mesh = SubResource("BoxMesh_x51ep")
 shape = SubResource("BoxShape3D_6flvy")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.708759, 0.705451, 0, -0.705451, -0.708759, 0, 15.2537, 0)
+transform = Transform3D(1, 0, 0, 0, 0.68962, 0.724172, 0, -0.724172, 0.68962, 0, 15.2537, 0)
+light_color = Color(1, 0.654902, 0.270588, 1)
+light_energy = 16.0
+light_angular_distance = 8.49
+shadow_enabled = true
+shadow_bias = 0.3
 
 [node name="Mamie" parent="." instance=ExtResource("1_78l3u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13238, 0)
@@ -339,6 +378,25 @@ stream = ExtResource("28_l2idd")
 
 [node name="Cat purr" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("29_ry6sd")
+
+[node name="Fenetre" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2683, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Fenetre"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.799, 10)
+mesh = SubResource("BoxMesh_p1o7i")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Fenetre"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.259756, 10)
+mesh = SubResource("BoxMesh_2p1pb")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Fenetre"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.614, 0, 10)
+mesh = SubResource("BoxMesh_87xni")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Fenetre"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6093, 0, 10)
+mesh = SubResource("BoxMesh_y5t1p")
 
 [connection signal="body_entered" from="Area_trigger/Droite" to="." method="_on_droite_body_entered"]
 [connection signal="body_entered" from="Area_trigger/Milieu" to="." method="_on_milieu_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cc1jveh1jjmrc"]
+[gd_scene load_steps=7 format=3 uid="uid://cc1jveh1jjmrc"]
 
 [sub_resource type="Gradient" id="Gradient_6lwbu"]
 interpolation_mode = 2
@@ -13,6 +13,43 @@ fractal_gain = 6.0
 height = 128
 color_ramp = SubResource("Gradient_6lwbu")
 noise = SubResource("FastNoiseLite_r2143")
+
+[sub_resource type="Animation" id="Animation_krla0"]
+resource_name = "textbar"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.63333, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 0.435275, 9.84915),
+"update": 0,
+"values": [Vector2(259.5, 661), Vector2(259.5, 630), Vector2(259.5, 625), Vector2(259.5, 448), Vector2(259.5, 442), Vector2(259.5, 460)]
+}
+
+[sub_resource type="Animation" id="Animation_3b015"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(256, 654)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xr34n"]
+_data = {
+"RESET": SubResource("Animation_3b015"),
+"textbar": SubResource("Animation_krla0")
+}
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -29,9 +66,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -316.0
-offset_top = -162.0
-offset_right = 317.0
+offset_left = -320.0
+offset_top = 6.0
+offset_right = 313.0
+offset_bottom = 168.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = SubResource("NoiseTexture2D_52crt")
@@ -45,3 +83,8 @@ offset_right = 581.5
 offset_bottom = 221.0
 mouse_filter = 1
 text = "ALORS COUBEH"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xr34n")
+}

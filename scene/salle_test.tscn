@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://n6wxbakib46q"]
 
-[ext_resource type="PackedScene" uid="uid://chi586ssubep1" path="res://scene/Nintendo DS.glb" id="1_umgf5"]
+[ext_resource type="PackedScene" uid="uid://chi586ssubep1" path="res://asset/asset_visuel/Nintendo DS.glb" id="1_umgf5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cm55a"]
 sky_top_color = Color(0.18038, 0.440774, 0.799813, 1)
