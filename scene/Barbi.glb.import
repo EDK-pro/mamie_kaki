@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ct5jcr3s2jdqa"
-path="res://.godot/imported/confiture.glb-ccd2ead4fd5e27e85d7666fe9cd47d3d.scn"
+uid="uid://bosd3i104egub"
+path="res://.godot/imported/Barbi.glb-6ef790243ab63baf1aed0fe1b4623d79.scn"
 
 [deps]
 
-source_file="res://scene/confiture.glb"
-dest_files=["res://.godot/imported/confiture.glb-ccd2ead4fd5e27e85d7666fe9cd47d3d.scn"]
+source_file="res://scene/Barbi.glb"
+dest_files=["res://.godot/imported/Barbi.glb-6ef790243ab63baf1aed0fe1b4623d79.scn"]
 
 [params]
 
@@ -32,5 +32,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=0
+gltf/naming_version=1
 gltf/embedded_image_handling=1
