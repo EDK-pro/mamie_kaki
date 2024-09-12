@@ -6,8 +6,8 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_l1xyf"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_nbc5r"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="4_eic3h"]
-[ext_resource type="PackedScene" uid="uid://chi586ssubep1" path="res://asset/asset_visuel/Nintendo DS.glb" id="7_agyvh"]
-[ext_resource type="PackedScene" uid="uid://g7und5rhuylg" path="res://asset/asset_visuel/table_chaise.glb" id="7_mlwqy"]
+[ext_resource type="PackedScene" uid="uid://dscq3fjslpkxc" path="res://asset/asset_visuel/Nintendo DS.glb" id="7_agyvh"]
+[ext_resource type="PackedScene" uid="uid://dsl2xr4e1sr2" path="res://asset/asset_visuel/table_chaise.glb" id="7_mlwqy"]
 [ext_resource type="PackedScene" uid="uid://dw3vpvlrsjxfs" path="res://scene/objets_base.tscn" id="8_mqrtj"]
 [ext_resource type="PackedScene" uid="uid://cc1jveh1jjmrc" path="res://scene/Texte_Souvenir.tscn" id="10_mlifd"]
 
