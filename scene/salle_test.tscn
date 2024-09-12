@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://n6wxbakib46q"]
+[gd_scene load_steps=9 format=3 uid="uid://n6wxbakib46q"]
 
-[ext_resource type="PackedScene" uid="uid://chi586ssubep1" path="res://asset/asset_visuel/Nintendo DS.glb" id="1_umgf5"]
+[ext_resource type="PackedScene" uid="uid://b4pwercqs2fol" path="res://scene/Mami.fbx" id="1_6go3y"]
+[ext_resource type="PackedScene" uid="uid://d2buvsrmmod7a" path="res://scene/TV.glb" id="2_xkaqg"]
+[ext_resource type="PackedScene" uid="uid://bk2qoaxjm0h00" path="res://scene/Velo.glb" id="3_hwjg0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cm55a"]
 sky_top_color = Color(0.18038, 0.440774, 0.799813, 1)
@@ -40,5 +42,24 @@ shape = SubResource("BoxShape3D_2py6w")
 mesh = SubResource("BoxMesh_w3hb2")
 skeleton = NodePath("../CollisionShape3D")
 
-[node name="Nintendo DS" parent="." instance=ExtResource("1_umgf5")]
+[node name="Nintendo DS" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.959161, 0, -0.28286, 0, 1, 0, 0.28286, 0, 0.959161, -0.361858, 0.469636, 0.815286)
+script = null
+
+[node name="Mami" parent="." instance=ExtResource("1_6go3y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.282, 0.150002, -3.60336)
+
+[node name="TV" parent="." instance=ExtResource("2_xkaqg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6798, 0.15, -3.49872)
+
+[node name="Velo" parent="." instance=ExtResource("3_hwjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4435, 0.517542, -2.56201)
