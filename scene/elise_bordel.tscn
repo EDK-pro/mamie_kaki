@@ -97,12 +97,6 @@ shape = SubResource("BoxShape3D_2oyde")
 [node name="Mamie" parent="." instance=ExtResource("2_xkmfd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.86139, 0)
 
-[node name="Camera3D" parent="Mamie" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2)
-
-[node name="Epaule_Droite" parent="Mamie" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2)
-
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.41001, 10.0242, -7.53462)
 

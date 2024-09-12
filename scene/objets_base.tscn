@@ -20,7 +20,9 @@ material = SubResource("StandardMaterial3D_qukvp")
 [sub_resource type="BoxMesh" id="BoxMesh_l7dxh"]
 size = Vector3(0.2, 0.2, 0.2)
 
-[node name="Objet_briilance" type="Area3D" node_paths=PackedStringArray("objet", "light")]
+[node name="Objet_briilance" type="Area3D" node_paths=PackedStringArray("objet", "light") groups=["objets_interaction"]]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_r8v00")
 objet = NodePath("MeshInstance3D")
 light = NodePath("MeshInstance3D/OmniLight3D")
@@ -29,13 +31,16 @@ light = NodePath("MeshInstance3D/OmniLight3D")
 shape = SubResource("CylinderShape3D_tj3it")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("BoxMesh_dw744")
 skeleton = NodePath("../..")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="MeshInstance3D"]
+visible = false
 light_color = Color(1, 0.431373, 0.141176, 1)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("BoxMesh_l7dxh")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

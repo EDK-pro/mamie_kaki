@@ -26,6 +26,10 @@ enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
 
 import/blender/enabled=false
 
+[global_group]
+
+objets_interaction="Groupe d'interaction avec les objets"
+
 [input]
 
 avancer={
