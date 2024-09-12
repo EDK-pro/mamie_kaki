@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://sb0gtyxbdh6l"
+path="res://.godot/imported/fond sonore extérieur.ogg-ee9406892d67084fd6fdcdd88d212ddc.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/phantom_camera/assets/asset sonore/fond sonore extérieur.ogg"
+dest_files=["res://.godot/imported/fond sonore extérieur.ogg-ee9406892d67084fd6fdcdd88d212ddc.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

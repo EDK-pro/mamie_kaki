@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dndf1khal8vg0"
+path="res://.godot/imported/cat sound 5.ogg-347658ac1413d60605529cfd5136ee16.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/phantom_camera/assets/asset sonore/cat sound 5.ogg"
+dest_files=["res://.godot/imported/cat sound 5.ogg-347658ac1413d60605529cfd5136ee16.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

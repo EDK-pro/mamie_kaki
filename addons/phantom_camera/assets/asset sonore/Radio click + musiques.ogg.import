@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b86pie2kiymso"
+path="res://.godot/imported/Radio click + musiques.ogg-6c1061796b6b14e3ac0b9137c085ef7f.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/phantom_camera/assets/asset sonore/Radio click + musiques.ogg"
+dest_files=["res://.godot/imported/Radio click + musiques.ogg-6c1061796b6b14e3ac0b9137c085ef7f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

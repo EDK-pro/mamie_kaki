@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bpttpe0d1hcln"
+path="res://.godot/imported/pas contre le sol intérieur.ogg-54dd4b02cf1674ca95e9b885eb572e3c.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/phantom_camera/assets/asset sonore/pas contre le sol intérieur.ogg"
+dest_files=["res://.godot/imported/pas contre le sol intérieur.ogg-54dd4b02cf1674ca95e9b885eb572e3c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
