@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ddphi1iq63m7d"
+path="res://.godot/imported/jingle tv + jeu télé.ogg-7584334c685da035053921aa43e0f34d.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/phantom_camera/assets/asset sonore/jingle tv + jeu télé.ogg"
+dest_files=["res://.godot/imported/jingle tv + jeu télé.ogg-7584334c685da035053921aa43e0f34d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
