@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://n6wxbakib46q"]
+[gd_scene load_steps=7 format=3 uid="uid://n6wxbakib46q"]
+
+[ext_resource type="PackedScene" uid="uid://chi586ssubep1" path="res://scene/Nintendo DS.glb" id="1_umgf5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cm55a"]
 sky_top_color = Color(0.18038, 0.440774, 0.799813, 1)
@@ -37,3 +39,6 @@ shape = SubResource("BoxShape3D_2py6w")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Sol"]
 mesh = SubResource("BoxMesh_w3hb2")
 skeleton = NodePath("../CollisionShape3D")
+
+[node name="Nintendo DS" parent="." instance=ExtResource("1_umgf5")]
+transform = Transform3D(0.959161, 0, -0.28286, 0, 1, 0, 0.28286, 0, 0.959161, -0.361858, 0.469636, 0.815286)
