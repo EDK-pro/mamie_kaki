@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=3 uid="uid://cc1jveh1jjmrc"]
+
+[sub_resource type="Gradient" id="Gradient_6lwbu"]
+interpolation_mode = 2
+colors = PackedColorArray(0, 0.701961, 0, 1, 0.639216, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_r2143"]
+noise_type = 3
+fractal_octaves = 10
+fractal_gain = 6.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_52crt"]
+height = 128
+color_ramp = SubResource("Gradient_6lwbu")
+noise = SubResource("FastNoiseLite_r2143")
+
+[sub_resource type="Animation" id="Animation_3b015"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(256, 654)]
+}
+
+[sub_resource type="Animation" id="Animation_krla0"]
+resource_name = "textbar"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.63333, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 0.435275, 9.84915),
+"update": 0,
+"values": [Vector2(259.5, 661), Vector2(259.5, 630), Vector2(259.5, 625), Vector2(259.5, 448), Vector2(259.5, 442), Vector2(259.5, 460)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xr34n"]
+_data = {
+"RESET": SubResource("Animation_3b015"),
+"textbar": SubResource("Animation_krla0")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = 6.0
+offset_right = 313.0
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("NoiseTexture2D_52crt")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 40.5
+offset_top = 29.0
+offset_right = 581.5
+offset_bottom = 221.0
+mouse_filter = 1
+text = "ALORS COUBEH"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xr34n")
+}

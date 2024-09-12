@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://etl4dugi8xn7"
+path="res://.godot/imported/bruit quand tu garde un objet dans ta poche.ogg-bb0cd39b6ed076e76778e494d84b4faa.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/phantom_camera/assets/asset sonore/bruit quand tu garde un objet dans ta poche.ogg"
+dest_files=["res://.godot/imported/bruit quand tu garde un objet dans ta poche.ogg-bb0cd39b6ed076e76778e494d84b4faa.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

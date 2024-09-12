@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://btscqqvv8tsu0"
+path="res://.godot/imported/door open.ogg-3b6cc6ece274fec47b099a5d78f959fd.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/phantom_camera/assets/asset sonore/door open.ogg"
+dest_files=["res://.godot/imported/door open.ogg-3b6cc6ece274fec47b099a5d78f959fd.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

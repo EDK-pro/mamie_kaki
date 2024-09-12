@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dhkdxynmq6ny"
+path="res://.godot/imported/cat purr.ogg-8b19bed9cd40046c259bdfac2b6d52bc.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/phantom_camera/assets/asset sonore/cat purr.ogg"
+dest_files=["res://.godot/imported/cat purr.ogg-8b19bed9cd40046c259bdfac2b6d52bc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

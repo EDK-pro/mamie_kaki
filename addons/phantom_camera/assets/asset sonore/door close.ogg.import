@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dwgogovgyhvj"
+path="res://.godot/imported/door close.ogg-509721a0e15be8da38403601888a5e95.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/phantom_camera/assets/asset sonore/door close.ogg"
+dest_files=["res://.godot/imported/door close.ogg-509721a0e15be8da38403601888a5e95.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

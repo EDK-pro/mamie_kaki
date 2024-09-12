@@ -1,24 +1,96 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwjim2twt32uf"]
+[gd_scene load_steps=16 format=3 uid="uid://bwjim2twt32uf"]
 
 [ext_resource type="Script" path="res://script/mamie.gd" id="1_awg1j"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_do4jc"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_iirvd"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_u38ci"]
+[ext_resource type="PackedScene" path="res://scene/interface_bouton.tscn" id="6_iiosi"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_fjh2q"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_i52bg"]
+size = Vector3(0.2, 0.2, 0.2)
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kux4g"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fgok3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kgtwv"]
+albedo_color = Color(1, 1, 0.152941, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_j5nxl"]
+material = SubResource("StandardMaterial3D_kgtwv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xlvoj"]
+albedo_color = Color(0.317647, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_72cet"]
+material = SubResource("StandardMaterial3D_xlvoj")
+
+[sub_resource type="Resource" id="Resource_k8vbq"]
+script = ExtResource("4_iirvd")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="Resource" id="Resource_dhoox"]
+script = ExtResource("5_u38ci")
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 0.0
+projection = 0
+fov = 75.0
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
 
 [node name="Mamie" type="Node3D"]
 
-[node name="Controlleur_mamie" type="CharacterBody3D" parent="." node_paths=PackedStringArray("bras_camera")]
+[node name="Controlleur_mamie" type="CharacterBody3D" parent="." node_paths=PackedStringArray("modele_mamie", "guizmo_forward", "guizmo_side", "guizmo")]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_awg1j")
-bras_camera = NodePath("../Bras_Camera")
+modele_mamie = NodePath("Modele_mamie")
+guizmo_forward = NodePath("../Guizmo/Guizmo_forward")
+guizmo_side = NodePath("../Guizmo/Guizmo_side")
+guizmo = NodePath("../Guizmo")
 
 [node name="Modele_mamie" type="MeshInstance3D" parent="Controlleur_mamie"]
 mesh = SubResource("CapsuleMesh_fjh2q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Controlleur_mamie/Modele_mamie"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.458, 0.8)
+mesh = SubResource("BoxMesh_i52bg")
+skeleton = NodePath("../..")
 
 [node name="Collision_mamie" type="CollisionShape3D" parent="Controlleur_mamie"]
 shape = SubResource("CapsuleShape3D_kux4g")
 
 [node name="Bras_Camera" type="SpringArm3D" parent="."]
-spring_length = 5.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.156187, 0.387973, 0)
+spring_length = 3.0
 
-[node name="Camera3D" type="Camera3D" parent="Bras_Camera"]
+[node name="Control" parent="." instance=ExtResource("6_iiosi")]
+visible = false
+mouse_filter = 2
+
+[node name="Guizmo" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.74598, 0)
+
+[node name="Guizmo_base" type="MeshInstance3D" parent="Guizmo"]
+mesh = SubResource("BoxMesh_fgok3")
+
+[node name="Guizmo_forward" type="MeshInstance3D" parent="Guizmo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+mesh = SubResource("BoxMesh_j5nxl")
+
+[node name="Guizmo_side" type="MeshInstance3D" parent="Guizmo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_72cet")
+
+[node name="PhantomCamera3D" type="Node3D" parent="."]
+transform = Transform3D(-0.0234201, 0, -0.999726, 0, 1, 0, 0.999726, 0, -0.0234201, -1.73887, 0.758457, 0.300955)
+script = ExtResource("3_do4jc")
+tween_resource = SubResource("Resource_k8vbq")
+camera_3d_resource = SubResource("Resource_dhoox")
