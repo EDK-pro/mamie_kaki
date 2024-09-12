@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ct5jcr3s2jdqa"
-path="res://.godot/imported/confiture.glb-ccd2ead4fd5e27e85d7666fe9cd47d3d.scn"
+uid="uid://cupp0sbxps6bc"
+path="res://.godot/imported/table_chaise.glb-6a9eb611b0f09ad5e462c3ecf12202fb.scn"
 
 [deps]
 
-source_file="res://scene/confiture.glb"
-dest_files=["res://.godot/imported/confiture.glb-ccd2ead4fd5e27e85d7666fe9cd47d3d.scn"]
+source_file="res://scene/table_chaise.glb"
+dest_files=["res://.godot/imported/table_chaise.glb-6a9eb611b0f09ad5e462c3ecf12202fb.scn"]
 
 [params]
 
@@ -32,5 +32,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=0
+gltf/naming_version=1
 gltf/embedded_image_handling=1
