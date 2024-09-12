@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dkgpo83vsvf6n"]
+[gd_scene load_steps=54 format=3 uid="uid://dkgpo83vsvf6n"]
 
 [ext_resource type="PackedScene" uid="uid://bwjim2twt32uf" path="res://scene/mamie.tscn" id="1_78l3u"]
 [ext_resource type="Script" path="res://script/Script_scene_greyblock.gd" id="1_a1d8j"]
@@ -10,6 +10,25 @@
 [ext_resource type="PackedScene" uid="uid://dsl2xr4e1sr2" path="res://asset/asset_visuel/table_chaise.glb" id="7_mlwqy"]
 [ext_resource type="PackedScene" uid="uid://dw3vpvlrsjxfs" path="res://scene/objets_base.tscn" id="8_mqrtj"]
 [ext_resource type="PackedScene" uid="uid://cc1jveh1jjmrc" path="res://scene/Texte_Souvenir.tscn" id="10_mlifd"]
+[ext_resource type="AudioStream" uid="uid://bxhbtg748m7gb" path="res://addons/phantom_camera/assets/asset sonore/cat sound 1.ogg" id="11_i8rbw"]
+[ext_resource type="AudioStream" uid="uid://d1ye3qa73h6m2" path="res://addons/phantom_camera/assets/asset sonore/cat sound 2.ogg" id="12_t5y5h"]
+[ext_resource type="AudioStream" uid="uid://b0qwxmw3y1ya7" path="res://addons/phantom_camera/assets/asset sonore/cat sound 3.ogg" id="13_q7d78"]
+[ext_resource type="AudioStream" uid="uid://b4ss8kso3exlg" path="res://addons/phantom_camera/assets/asset sonore/cat sound 4.ogg" id="14_26qbn"]
+[ext_resource type="AudioStream" uid="uid://dndf1khal8vg0" path="res://addons/phantom_camera/assets/asset sonore/cat sound 5.ogg" id="15_c4qwj"]
+[ext_resource type="AudioStream" uid="uid://sb0gtyxbdh6l" path="res://addons/phantom_camera/assets/asset sonore/fond sonore extérieur.ogg" id="16_6jga2"]
+[ext_resource type="AudioStream" uid="uid://etl4dugi8xn7" path="res://addons/phantom_camera/assets/asset sonore/bruit quand tu garde un objet dans ta poche.ogg" id="17_h0upu"]
+[ext_resource type="AudioStream" uid="uid://btscqqvv8tsu0" path="res://addons/phantom_camera/assets/asset sonore/door open.ogg" id="18_s3vp5"]
+[ext_resource type="AudioStream" uid="uid://dwgogovgyhvj" path="res://addons/phantom_camera/assets/asset sonore/door close.ogg" id="19_dvfjw"]
+[ext_resource type="AudioStream" uid="uid://ddphi1iq63m7d" path="res://addons/phantom_camera/assets/asset sonore/jingle tv + jeu télé.ogg" id="20_sqjhu"]
+[ext_resource type="AudioStream" uid="uid://bpttpe0d1hcln" path="res://addons/phantom_camera/assets/asset sonore/pas contre le sol intérieur.ogg" id="21_1ie1l"]
+[ext_resource type="AudioStream" uid="uid://cccsqed6ejxib" path="res://addons/phantom_camera/assets/asset sonore/intérieur maison ambiance.ogg" id="22_un3kn"]
+[ext_resource type="AudioStream" uid="uid://bus7o01vtsrv7" path="res://addons/phantom_camera/assets/asset sonore/tourner une page 1.ogg" id="23_kqqrw"]
+[ext_resource type="AudioStream" uid="uid://ctspjkk2rv6or" path="res://addons/phantom_camera/assets/asset sonore/tourner une page 2.mp3" id="24_5apos"]
+[ext_resource type="AudioStream" uid="uid://b86pie2kiymso" path="res://addons/phantom_camera/assets/asset sonore/Radio click + musiques.ogg" id="25_e835v"]
+[ext_resource type="AudioStream" uid="uid://dk138re87fcu5" path="res://addons/phantom_camera/assets/asset sonore/glass put down.ogg" id="26_ni2x7"]
+[ext_resource type="AudioStream" uid="uid://ddqbg6730038v" path="res://addons/phantom_camera/assets/asset sonore/glass pick up.ogg" id="27_w8uhp"]
+[ext_resource type="AudioStream" uid="uid://d0kksmpr8is7o" path="res://addons/phantom_camera/assets/asset sonore/click.ogg" id="28_l2idd"]
+[ext_resource type="AudioStream" uid="uid://dhkdxynmq6ny" path="res://addons/phantom_camera/assets/asset sonore/cat purr.ogg" id="29_ry6sd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_puydc"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -148,6 +167,20 @@ size = 1.0
 frustum_offset = Vector2(0, 0)
 near = 0.05
 far = 4000.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_su8bt"]
+random_volume_offset_db = 3.43
+streams_count = 5
+stream_0/stream = ExtResource("11_i8rbw")
+stream_1/stream = ExtResource("12_t5y5h")
+stream_2/stream = ExtResource("13_q7d78")
+stream_3/stream = ExtResource("14_26qbn")
+stream_4/stream = ExtResource("15_c4qwj")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_yga78"]
+streams_count = 2
+stream_0/stream = ExtResource("23_kqqrw")
+stream_1/stream = ExtResource("24_5apos")
 
 [sub_resource type="BoxMesh" id="BoxMesh_p1o7i"]
 size = Vector3(20, 1, 0.5)
@@ -300,6 +333,51 @@ camera_3d_resource = SubResource("Resource_uebgi")
 follow_offset = Vector3(0, 1, 0)
 follow_distance = 2.0
 spring_length = 2.0
+
+[node name="chat miaulement" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_su8bt")
+
+[node name="fond sonore extérieur" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("16_6jga2")
+autoplay = true
+
+[node name="bruit quand tu met un truc dans ta poche" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("17_h0upu")
+
+[node name="door open" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("18_s3vp5")
+
+[node name="door close" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("19_dvfjw")
+
+[node name="Jingle tv + jeu télé" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("20_sqjhu")
+
+[node name="Pas sol intérieur" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.449, 3.1295)
+stream = ExtResource("21_1ie1l")
+
+[node name="Ambiance maison intérieur" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("22_un3kn")
+autoplay = true
+
+[node name="Tourner une page" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_yga78")
+
+[node name="radio click + musique radio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("25_e835v")
+
+[node name="glass put down" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("26_ni2x7")
+
+[node name="glass pick up" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("27_w8uhp")
+
+[node name="click de fin radio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("28_l2idd")
+
+[node name="Cat purr" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("29_ry6sd")
 
 [node name="Fenetre" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2683, 0)
