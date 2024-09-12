@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://dkgpo83vsvf6n"]
+[gd_scene load_steps=66 format=3 uid="uid://dkgpo83vsvf6n"]
 
 [ext_resource type="PackedScene" uid="uid://bwjim2twt32uf" path="res://scene/mamie.tscn" id="1_78l3u"]
 [ext_resource type="Script" path="res://script/Script_scene_greyblock.gd" id="1_a1d8j"]
@@ -6,10 +6,9 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_l1xyf"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_nbc5r"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="4_eic3h"]
-[ext_resource type="PackedScene" uid="uid://dscq3fjslpkxc" path="res://asset/asset_visuel/Nintendo DS.glb" id="7_agyvh"]
-[ext_resource type="PackedScene" uid="uid://dsl2xr4e1sr2" path="res://asset/asset_visuel/table_chaise.glb" id="7_mlwqy"]
+[ext_resource type="PackedScene" uid="uid://c2n8u6iwj28ej" path="res://asset/asset_visuel/Nintendo DS.glb" id="7_agyvh"]
+[ext_resource type="PackedScene" uid="uid://bf8rbinh8w38d" path="res://asset/asset_visuel/table_chaise.glb" id="7_mlwqy"]
 [ext_resource type="PackedScene" uid="uid://dw3vpvlrsjxfs" path="res://scene/objets_base.tscn" id="8_mqrtj"]
-[ext_resource type="PackedScene" uid="uid://cc1jveh1jjmrc" path="res://scene/Texte_Souvenir.tscn" id="10_mlifd"]
 [ext_resource type="AudioStream" uid="uid://bxhbtg748m7gb" path="res://addons/phantom_camera/assets/asset sonore/cat sound 1.ogg" id="11_i8rbw"]
 [ext_resource type="AudioStream" uid="uid://d1ye3qa73h6m2" path="res://addons/phantom_camera/assets/asset sonore/cat sound 2.ogg" id="12_t5y5h"]
 [ext_resource type="AudioStream" uid="uid://b0qwxmw3y1ya7" path="res://addons/phantom_camera/assets/asset sonore/cat sound 3.ogg" id="13_q7d78"]
@@ -29,6 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://ddqbg6730038v" path="res://addons/phantom_camera/assets/asset sonore/glass pick up.ogg" id="27_w8uhp"]
 [ext_resource type="AudioStream" uid="uid://d0kksmpr8is7o" path="res://addons/phantom_camera/assets/asset sonore/click.ogg" id="28_l2idd"]
 [ext_resource type="AudioStream" uid="uid://dhkdxynmq6ny" path="res://addons/phantom_camera/assets/asset sonore/cat purr.ogg" id="29_ry6sd"]
+[ext_resource type="Texture2D" uid="uid://rmc835gwvdmy" path="res://asset/asset_visuel/Flare00.PNG" id="29_tgxcj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_puydc"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -194,6 +194,29 @@ size = Vector3(6, 6, 0.5)
 [sub_resource type="BoxMesh" id="BoxMesh_y5t1p"]
 size = Vector3(6, 6, 0.5)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a5r5d"]
+lifetime_randomness = 0.2
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 8.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i2vw5"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.0705882)
+albedo_texture = ExtResource("29_tgxcj")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_btwse"]
+material = SubResource("StandardMaterial3D_i2vw5")
+size = Vector2(0.2, 0.2)
+orientation = 2
+
 [node name="Greyblock_scene" type="Node3D" node_paths=PackedStringArray("pcam_milieu", "pcam_gauche", "pcam_droite", "cam_proche", "mamie")]
 script = ExtResource("1_a1d8j")
 pcam_milieu = NodePath("PhantomCameraMilieu")
@@ -320,9 +343,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.02232, 0.15, 7.91369)
 
 [node name="Objet_briilance" parent="table_chaise" instance=ExtResource("8_mqrtj")]
 
-[node name="Control" parent="." instance=ExtResource("10_mlifd")]
-mouse_filter = 2
-
 [node name="Scene_souvenir" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
 transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 2.13238, 2)
 script = ExtResource("2_m0kki")
@@ -397,6 +417,13 @@ mesh = SubResource("BoxMesh_87xni")
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Fenetre"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6093, 0, 10)
 mesh = SubResource("BoxMesh_y5t1p")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25844, 0)
+lifetime = 10.0
+trail_enabled = true
+process_material = SubResource("ParticleProcessMaterial_a5r5d")
+draw_pass_1 = SubResource("PlaneMesh_btwse")
 
 [connection signal="body_entered" from="Area_trigger/Droite" to="." method="_on_droite_body_entered"]
 [connection signal="body_entered" from="Area_trigger/Milieu" to="." method="_on_milieu_body_entered"]
