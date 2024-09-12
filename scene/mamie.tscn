@@ -76,7 +76,7 @@ visible = false
 mouse_filter = 2
 
 [node name="Guizmo" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54286, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.74598, 0)
 
 [node name="Guizmo_base" type="MeshInstance3D" parent="Guizmo"]
 mesh = SubResource("BoxMesh_fgok3")
