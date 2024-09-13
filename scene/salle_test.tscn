@@ -1,21 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://n6wxbakib46q"]
+[gd_scene load_steps=10 format=3 uid="uid://n6wxbakib46q"]
 
-
-[ext_resource type="Texture2D" uid="uid://bw6puyoi4tqpy" path="res://scene/SkyhighFluffycloudField4k.hdr" id="1_q3ld2"]
 [ext_resource type="PackedScene" uid="uid://lin08n0qj84b" path="res://asset/asset_visuel/Nintendo DS.glb" id="1_umgf5"]
 [ext_resource type="PackedScene" uid="uid://cq3ahsat54o5o" path="res://scene/Cimetiere.glb" id="2_rnhc7"]
 
-[ext_resource type="PackedScene" uid="uid://b4pwercqs2fol" path="res://scene/Mami.fbx" id="1_6go3y"]
-[ext_resource type="PackedScene" uid="uid://d2buvsrmmod7a" path="res://scene/TV.glb" id="2_xkaqg"]
-[ext_resource type="PackedScene" uid="uid://bk2qoaxjm0h00" path="res://scene/Velo.glb" id="3_hwjg0"]
-
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_m7kk1"]
-panorama = ExtResource("1_q3ld2")
-energy_multiplier = 0.2
-
 [sub_resource type="Sky" id="Sky_wgq2k"]
-sky_material = SubResource("PanoramaSkyMaterial_m7kk1")
 
 [sub_resource type="Environment" id="Environment_5k03h"]
 background_mode = 2
@@ -28,6 +16,32 @@ size = Vector3(100, 0.3, 100)
 
 [sub_resource type="BoxMesh" id="BoxMesh_w3hb2"]
 size = Vector3(100, 0.3, 100)
+
+[sub_resource type="Animation" id="Animation_7f6t5"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Cimetiere")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_r6rcs"]
+resource_name = "new_animation"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Cimetiere")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.0333333, 1, 0, 0, 0, 1, 1, -2.07308, 0, -20.9308)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_171wi"]
+_data = {
+"RESET": SubResource("Animation_7f6t5"),
+"new_animation": SubResource("Animation_r6rcs")
+}
 
 [node name="Salle_test" type="Node3D"]
 
@@ -47,28 +61,12 @@ shape = SubResource("BoxShape3D_2py6w")
 mesh = SubResource("BoxMesh_w3hb2")
 skeleton = NodePath("../CollisionShape3D")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sol/MeshInstance3D"]
+libraries = {
+"": SubResource("AnimationLibrary_171wi")
+}
+
 [node name="Cimetiere" parent="Sol" instance=ExtResource("2_rnhc7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.76643, 0.410552, -9.39109)
 
-[node name="Nintendo DS" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-
+[node name="Nintendo DS" parent="." instance=ExtResource("1_umgf5")]
 transform = Transform3D(0.959161, 0, -0.28286, 0, 1, 0, 0.28286, 0, 0.959161, -0.361858, 0.469636, 0.815286)
-script = null
-
-[node name="Mami" parent="." instance=ExtResource("1_6go3y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.282, 0.150002, -3.60336)
-
-[node name="TV" parent="." instance=ExtResource("2_xkaqg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6798, 0.15, -3.49872)
-
-[node name="Velo" parent="." instance=ExtResource("3_hwjg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4435, 0.517542, -2.56201)
