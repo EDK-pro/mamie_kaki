@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://n6wxbakib46q"]
+[gd_scene load_steps=9 format=3 uid="uid://n6wxbakib46q"]
 
 [ext_resource type="Texture2D" uid="uid://bw6puyoi4tqpy" path="res://scene/SkyhighFluffycloudField4k.hdr" id="1_q3ld2"]
 [ext_resource type="PackedScene" uid="uid://lin08n0qj84b" path="res://asset/asset_visuel/Nintendo DS.glb" id="1_umgf5"]
+[ext_resource type="PackedScene" uid="uid://cq3ahsat54o5o" path="res://scene/Cimetiere.glb" id="2_rnhc7"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_m7kk1"]
 panorama = ExtResource("1_q3ld2")
@@ -39,6 +40,9 @@ shape = SubResource("BoxShape3D_2py6w")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Sol"]
 mesh = SubResource("BoxMesh_w3hb2")
 skeleton = NodePath("../CollisionShape3D")
+
+[node name="Cimetiere" parent="Sol" instance=ExtResource("2_rnhc7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.76643, 0.410552, -9.39109)
 
 [node name="Nintendo DS" parent="." instance=ExtResource("1_umgf5")]
 transform = Transform3D(0.959161, 0, -0.28286, 0, 1, 0, 0.28286, 0, 0.959161, -0.361858, 0.469636, 0.815286)
