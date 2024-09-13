@@ -14,6 +14,7 @@ var souris_derniere_position = Vector3.ZERO
 @export var max_yaw: float = 360
 
 @export var animation:AnimationPlayer
+@export var sound : AudioStreamPlayer3D
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -30,7 +31,9 @@ func _process(delta: float) -> void:
 	
 	if velocity != Vector3.ZERO:
 		animation.play("rigAction_001")
+		sound.play()
 	else :
+		sound.stop()
 		animation.stop()
 	
 	

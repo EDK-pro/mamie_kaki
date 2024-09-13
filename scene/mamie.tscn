@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://bwjim2twt32uf"]
+[gd_scene load_steps=29 format=4 uid="uid://bwjim2twt32uf"]
 
 [ext_resource type="Script" path="res://script/mamie.gd" id="1_awg1j"]
 [ext_resource type="Texture2D" uid="uid://u3lvnan7g0v2" path="res://MamiCetteGrogniasse_Texture final.png" id="2_yl3pt"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_iirvd"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_u38ci"]
 [ext_resource type="PackedScene" uid="uid://boq3fwg8bodug" path="res://scene/interface_bouton.tscn" id="6_iiosi"]
+[ext_resource type="AudioStream" uid="uid://bpttpe0d1hcln" path="res://addons/phantom_camera/assets/asset sonore/pas contre le sol intérieur.ogg" id="8_d4v8f"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_i52bg"]
 size = Vector3(0.2, 0.2, 0.2)
@@ -801,6 +802,7 @@ blend_shape_mode = 0
 [sub_resource type="Animation" id="Animation_q6ca4"]
 resource_name = "ArmatureAction_001"
 length = 2.5
+loop_mode = 2
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -2037,7 +2039,7 @@ tracks/175/keys = PackedFloat32Array(0, 1, -0.999888, 0, 0, 0.0149765)
 [sub_resource type="Animation" id="Animation_subju"]
 resource_name = "rigAction_001"
 length = 1.66667
-loop_mode = 2
+loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -3315,7 +3317,7 @@ far = 4000.0
 
 [node name="Mamie" type="Node3D"]
 
-[node name="Controlleur_mamie" type="CharacterBody3D" parent="." node_paths=PackedStringArray("modele_mamie", "guizmo_forward", "guizmo_side", "guizmo", "animation")]
+[node name="Controlleur_mamie" type="CharacterBody3D" parent="." node_paths=PackedStringArray("modele_mamie", "guizmo_forward", "guizmo_side", "guizmo", "animation", "sound")]
 collision_layer = 15
 collision_mask = 15
 script = ExtResource("1_awg1j")
@@ -3324,11 +3326,13 @@ guizmo_forward = NodePath("../Guizmo/Guizmo_forward")
 guizmo_side = NodePath("../Guizmo/Guizmo_side")
 guizmo = NodePath("../Guizmo")
 animation = NodePath("Modele_mamie/MamiCetteGrogniasse/AnimationPlayer")
+sound = NodePath("../AudioStreamPlayer3D")
 
 [node name="Modele_mamie" type="MeshInstance3D" parent="Controlleur_mamie"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Controlleur_mamie/Modele_mamie"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.458, 0.8)
+visible = false
 mesh = SubResource("BoxMesh_i52bg")
 skeleton = NodePath("../..")
 
@@ -4876,7 +4880,7 @@ bones/219/parent = 218
 bones/219/rest = Transform3D(-1, 6.56332e-28, -3.12639e-13, 4.54384e-28, -1, -3.55271e-15, -3.12639e-13, -3.55271e-15, 1, -1.79162e-14, -3.41611e-09, 3.72526e-09)
 bones/219/enabled = true
 bones/219/position = Vector3(-1.79162e-14, -3.41611e-09, 3.72526e-09)
-bones/219/rotation = Quaternion(-1.56319e-13, 0, 1, -2.52435e-29)
+bones/219/rotation = Quaternion(-1.56319e-13, 3.94606e-41, 1, -2.52435e-29)
 bones/219/scale = Vector3(1, 1, 1)
 bones/220/name = "MCH-thigh_ik_target.parent.R"
 bones/220/parent = -1
@@ -4905,8 +4909,10 @@ skin = SubResource("Skin_sf3uj")
 libraries = {
 "": SubResource("AnimationLibrary_0ikhg")
 }
+autoplay = "rigAction_001"
 
 [node name="Collision_mamie" type="CollisionShape3D" parent="Controlleur_mamie"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.592657, 0)
 shape = SubResource("CapsuleShape3D_kux4g")
 
 [node name="Bras_Camera" type="SpringArm3D" parent="."]
@@ -4936,3 +4942,6 @@ transform = Transform3D(-0.0234201, 0, -0.999726, 0, 1, 0, 0.999726, 0, -0.02342
 script = ExtResource("3_do4jc")
 tween_resource = SubResource("Resource_k8vbq")
 camera_3d_resource = SubResource("Resource_dhoox")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_d4v8f")
