@@ -13,6 +13,8 @@ var souris_derniere_position = Vector3.ZERO
 @export var min_yaw: float = 0
 @export var max_yaw: float = 360
 
+@export var animation:AnimationPlayer
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
@@ -26,6 +28,10 @@ func _process(delta: float) -> void:
 	
 	move_and_slide()
 	
+	if velocity != Vector3.ZERO:
+		animation.play("rigAction_001")
+	else :
+		animation.stop()
 	
 	
 
@@ -38,7 +44,7 @@ func bouger_mamie():
 	if velocity.length() > 0.2:
 		var look_direction: Vector2 = Vector2(velocity.z, velocity.x)
 		modele_mamie.rotation.y = look_direction.angle()
-	velocity = direction_mamie * 4.0
+	velocity = direction_mamie * 1.0
 	
 func rotate_guizmo(rotation_y_voulue : float):
 	guizmo.rotation.y = rotation_y_voulue

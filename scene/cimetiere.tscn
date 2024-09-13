@@ -1,8 +1,8 @@
 [gd_scene load_steps=19 format=3 uid="uid://c1d8t53njlc3q"]
 
-[ext_resource type="PackedScene" uid="uid://bmdxdr72me0sf" path="res://asset/asset_visuel/tombe.glb" id="1_eh1qk"]
-[ext_resource type="PackedScene" uid="uid://b1cvg1yuqix2h" path="res://asset/asset_visuel/banc.glb" id="2_5a7ns"]
-[ext_resource type="PackedScene" uid="uid://dq6c7f72cdchl" path="res://asset/asset_visuel/buisson.glb" id="3_hf1ev"]
+[ext_resource type="PackedScene" uid="uid://dyxvy0mogy0s" path="res://asset/asset_visuel/tombe.glb" id="1_eh1qk"]
+[ext_resource type="PackedScene" uid="uid://gklgram354xa" path="res://asset/asset_visuel/banc.glb" id="2_5a7ns"]
+[ext_resource type="PackedScene" uid="uid://b4vkdb63iic70" path="res://asset/asset_visuel/buisson.glb" id="3_hf1ev"]
 [ext_resource type="PackedScene" uid="uid://bwjim2twt32uf" path="res://scene/mamie.tscn" id="4_71x0h"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="5_ujcro"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_cpyys"]
