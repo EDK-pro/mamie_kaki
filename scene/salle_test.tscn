@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://n6wxbakib46q"]
 
-[ext_resource type="PackedScene" uid="uid://lin08n0qj84b" path="res://asset/asset_visuel/Nintendo DS.glb" id="1_umgf5"]
-[ext_resource type="PackedScene" uid="uid://cq3ahsat54o5o" path="res://scene/Cimetiere.glb" id="2_rnhc7"]
+[ext_resource type="PackedScene" uid="uid://bo5w4mdnb02f8" path="res://asset/asset_visuel/Nintendo DS.glb" id="1_umgf5"]
+[ext_resource type="PackedScene" uid="uid://fi58olessn7r" path="res://scene/Cimetiere.glb" id="2_rnhc7"]
 
 [sub_resource type="Sky" id="Sky_wgq2k"]
 

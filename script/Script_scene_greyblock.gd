@@ -6,6 +6,7 @@ signal changer_deplacement(rotation_guizmo)
 @export var pcam_gauche : PhantomCamera3D
 @export var pcam_droite : PhantomCamera3D
 @export var cam_proche : PhantomCamera3D
+@export var text : Control
 
 @export var mamie : Node3D
 var controlleur_mamie : CharacterBody3D
@@ -31,6 +32,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			if i.selected :
 				choix_souvenirs(hitbox_objets[index])
 			index += 1
+	if event.is_action_pressed("fin_dialogue"):
+		text.play_anim()
+		cam_proche.priority = 0
 
 func _on_droite_body_entered(body: Node3D) -> void:
 	changer_camera(pcam_droite)
@@ -54,6 +58,8 @@ func changer_camera(camera_voulue : PhantomCamera3D):
 func choix_souvenirs(souvenir : Node3D):
 	cam_proche.follow_target = souvenir
 	cam_proche.position = souvenir.position
-	changer_camera(cam_proche)
+	cam_proche.priority = 2
+	text.play_anim()
+	print(souvenir)
 	if str(souvenir).get_slice(":",0) == "table_chaise":
 		print("coubeh")

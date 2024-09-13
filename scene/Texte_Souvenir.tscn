@@ -1,18 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cc1jveh1jjmrc"]
+[gd_scene load_steps=6 format=3 uid="uid://cc1jveh1jjmrc"]
 
-[sub_resource type="Gradient" id="Gradient_6lwbu"]
-interpolation_mode = 2
-colors = PackedColorArray(0, 0.701961, 0, 1, 0.639216, 1, 1, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_r2143"]
-noise_type = 3
-fractal_octaves = 10
-fractal_gain = 6.0
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_52crt"]
-height = 128
-color_ramp = SubResource("Gradient_6lwbu")
-noise = SubResource("FastNoiseLite_r2143")
+[ext_resource type="Texture2D" uid="uid://damnadeglxybn" path="res://asset/asset_visuel/Sprite-0003.png" id="1_16yys"]
+[ext_resource type="Script" path="res://script/texte_souvenir.gd" id="1_l5us4"]
 
 [sub_resource type="Animation" id="Animation_3b015"]
 length = 0.001
@@ -51,13 +40,16 @@ _data = {
 "textbar": SubResource("Animation_krla0")
 }
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" node_paths=PackedStringArray("anim", "texte")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_l5us4")
+anim = NodePath("AnimationPlayer")
+texte = NodePath("TextureRect/RichTextLabel")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -66,13 +58,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -320.0
-offset_top = 6.0
-offset_right = 313.0
-offset_bottom = 168.0
+offset_left = -316.5
+offset_top = 13.0
+offset_right = 472.5
+offset_bottom = 270.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = SubResource("NoiseTexture2D_52crt")
+texture = ExtResource("1_16yys")
+expand_mode = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TextureRect"]
 modulate = Color(0, 0, 0, 1)

@@ -21,8 +21,8 @@ material = SubResource("StandardMaterial3D_qukvp")
 size = Vector3(0.2, 0.2, 0.2)
 
 [node name="Objet_briilance" type="Area3D" node_paths=PackedStringArray("objet", "light") groups=["objets_interaction"]]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("1_r8v00")
 objet = NodePath("MeshInstance3D")
 light = NodePath("MeshInstance3D/OmniLight3D")

@@ -1,5 +1,4 @@
-
-[gd_scene load_steps=70 format=3 uid="uid://dkgpo83vsvf6n"]
+[gd_scene load_steps=95 format=3 uid="uid://dkgpo83vsvf6n"]
 
 [ext_resource type="PackedScene" uid="uid://bwjim2twt32uf" path="res://scene/mamie.tscn" id="1_78l3u"]
 [ext_resource type="Script" path="res://script/Script_scene_greyblock.gd" id="1_a1d8j"]
@@ -7,8 +6,8 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_l1xyf"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_nbc5r"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="4_eic3h"]
-[ext_resource type="PackedScene" uid="uid://lin08n0qj84b" path="res://asset/asset_visuel/Nintendo DS.glb" id="7_agyvh"]
-[ext_resource type="PackedScene" uid="uid://c134rkmoh3mf3" path="res://asset/asset_visuel/table_chaise.glb" id="7_mlwqy"]
+[ext_resource type="PackedScene" uid="uid://bo5w4mdnb02f8" path="res://asset/asset_visuel/Nintendo DS.glb" id="7_agyvh"]
+[ext_resource type="PackedScene" uid="uid://bm4tkdysdotsr" path="res://asset/asset_visuel/table_chaise.glb" id="7_mlwqy"]
 [ext_resource type="PackedScene" uid="uid://dw3vpvlrsjxfs" path="res://scene/objets_base.tscn" id="8_mqrtj"]
 [ext_resource type="AudioStream" uid="uid://bxhbtg748m7gb" path="res://addons/phantom_camera/assets/asset sonore/cat sound 1.ogg" id="11_i8rbw"]
 [ext_resource type="AudioStream" uid="uid://d1ye3qa73h6m2" path="res://addons/phantom_camera/assets/asset sonore/cat sound 2.ogg" id="12_t5y5h"]
@@ -34,9 +33,11 @@
 [ext_resource type="AudioStream" uid="uid://d0kksmpr8is7o" path="res://addons/phantom_camera/assets/asset sonore/click.ogg" id="28_l2idd"]
 [ext_resource type="AudioStream" uid="uid://bg2spgvuegsxo" path="res://addons/phantom_camera/assets/asset sonore/Télé meuble voix off.ogg" id="29_866dk"]
 [ext_resource type="AudioStream" uid="uid://dhkdxynmq6ny" path="res://addons/phantom_camera/assets/asset sonore/cat purr.ogg" id="29_ry6sd"]
+[ext_resource type="Texture2D" uid="uid://b11t3mgd60a65" path="res://asset/asset_visuel/Flare00.PNG" id="29_tgxcj"]
 [ext_resource type="AudioStream" uid="uid://bmx8k4j5aeb37" path="res://addons/phantom_camera/assets/asset sonore/Poupée voix off.ogg" id="30_aow77"]
 [ext_resource type="AudioStream" uid="uid://5kxsk0xbllmr" path="res://addons/phantom_camera/assets/asset sonore/masque cousu voix off.ogg" id="31_dhscp"]
-[ext_resource type="Texture2D" uid="uid://rmc835gwvdmy" path="res://asset/asset_visuel/Flare00.PNG" id="29_tgxcj"]
+[ext_resource type="PackedScene" uid="uid://bjdrca5iwu2ue" path="res://scene/Piece.glb" id="37_8kt5y"]
+[ext_resource type="PackedScene" uid="uid://cc1jveh1jjmrc" path="res://scene/Texte_Souvenir.tscn" id="38_s6q42"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_puydc"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -96,13 +97,13 @@ size = Vector3(20, 0.3, 20)
 size = Vector3(20, 0.3, 20)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ody2o"]
-size = Vector3(8, 0.2, 8)
+size = Vector3(1.07629, 0.2, 1.67004)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_faoug"]
-size = Vector3(20, 0.2, 8)
+size = Vector3(4.99924, 0.2, 1.3912)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g5nvo"]
-size = Vector3(8, 0.2, 8)
+size = Vector3(0.863162, 0.358911, 1.78552)
 
 [sub_resource type="Resource" id="Resource_q88rd"]
 script = ExtResource("3_l1xyf")
@@ -225,12 +226,73 @@ material = SubResource("StandardMaterial3D_i2vw5")
 size = Vector2(0.2, 0.2)
 orientation = 2
 
-[node name="Greyblock_scene" type="Node3D" node_paths=PackedStringArray("pcam_milieu", "pcam_gauche", "pcam_droite", "cam_proche", "mamie")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_bv2gb"]
+size = Vector3(20.1416, 1, 5.99017)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tahs0"]
+size = Vector3(21.147, 2.4325, 0.570816)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gjonn"]
+size = Vector3(0.500977, 2.0307, 6.85852)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p7x2v"]
+size = Vector3(0.260681, 2.30066, 6.30127)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uffxu"]
+size = Vector3(1.32727, 1.79346, 3.99463)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_l1iv2"]
+radius = 1.07537
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6gful"]
+radius = 0.323446
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7buoq"]
+radius = 0.291594
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pl1k4"]
+radius = 0.346528
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j2sje"]
+size = Vector3(1.11829, 1, 1.94617)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c8cqj"]
+size = Vector3(0.343018, 1, 4.45401)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k0vhm"]
+size = Vector3(1.79834, 1.55261, 1.29694)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_txvta"]
+size = Vector3(1, 2.40051, 2.3638)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vko67"]
+size = Vector3(1, 2.32507, 2.23267)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kxgna"]
+size = Vector3(0.202209, 2.36621, 4.22092)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ysmr6"]
+radius = 0.348695
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cpman"]
+size = Vector3(1.28369, 1.56946, 2.84082)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4sv7j"]
+size = Vector3(2.72693, 1.47754, 1.16113)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_axjnp"]
+size = Vector3(1, 1.37219, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2u7ul"]
+size = Vector3(20.825, 2.05908, 0.354004)
+
+[node name="Greyblock_scene" type="Node3D" node_paths=PackedStringArray("pcam_milieu", "pcam_gauche", "pcam_droite", "cam_proche", "text", "mamie")]
 script = ExtResource("1_a1d8j")
 pcam_milieu = NodePath("PhantomCameraMilieu")
 pcam_gauche = NodePath("PhantomCameraGauche")
 pcam_droite = NodePath("PhantomCameraDroite")
 cam_proche = NodePath("Scene_souvenir")
+text = NodePath("Control")
 mamie = NodePath("Mamie")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -238,6 +300,7 @@ environment = SubResource("Environment_pnk46")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.741642, 0)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29952, 0, -10)
@@ -272,6 +335,7 @@ transform = Transform3D(1, 0, 0, 0, 0.573462, 0.819232, 0, -0.819232, 0.573462, 
 mesh = SubResource("BoxMesh_tsk8i")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("BoxMesh_x51ep")
@@ -280,7 +344,7 @@ mesh = SubResource("BoxMesh_x51ep")
 shape = SubResource("BoxShape3D_6flvy")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.68962, 0.724172, 0, -0.724172, 0.68962, 0, 15.2537, 0)
+transform = Transform3D(1, 0, 0, 0, -0.953717, 0.300706, 0, -0.300706, -0.953717, 0, 15.2537, 0)
 light_color = Color(1, 0.654902, 0.270588, 1)
 light_energy = 16.0
 light_angular_distance = 8.49
@@ -288,10 +352,10 @@ shadow_enabled = true
 shadow_bias = 0.3
 
 [node name="Mamie" parent="." instance=ExtResource("1_78l3u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13238, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.684266, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.960648, 0.277767, 0, -0.277767, 0.960648, 0, 2.96181, 8.4755)
+transform = Transform3D(1, 0, 0, 0, 0.960648, 0.277767, 0, -0.277767, 0.960648, 0.290879, 2.96181, 5.35823)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("3_nbc5r")
@@ -299,44 +363,47 @@ script = ExtResource("3_nbc5r")
 [node name="Area_trigger" type="Node" parent="."]
 
 [node name="Droite" type="Area3D" parent="Area_trigger"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.46617, 0.643837, 7.65411)
-collision_layer = 2
-collision_mask = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5125, 0.643836, -2.33406)
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area_trigger/Droite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.86659, -2.38419e-07, -0.607229)
 shape = SubResource("BoxShape3D_ody2o")
 
 [node name="Milieu" type="Area3D" parent="Area_trigger"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.450485, -5.89841)
-collision_layer = 2
-collision_mask = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08237, 0.996221, -2.57759)
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area_trigger/Milieu"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.577342, 0, -0.431172)
 shape = SubResource("BoxShape3D_faoug")
 
 [node name="Gauche" type="Area3D" parent="Area_trigger"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.04383, 1.27588, 6.66167)
-collision_layer = 2
-collision_mask = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.86652, -4.76837e-07, -2.08966)
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area_trigger/Gauche"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.24117, 0.744857, -0.880066)
 shape = SubResource("BoxShape3D_g5nvo")
 
 [node name="PhantomCameraMilieu" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.960648, 0.277767, 0, -0.277767, 0.960648, 0, 2.96181, 8.4755)
+transform = Transform3D(1, 0, 0, 0, 0.960648, 0.277767, 0, -0.277767, 0.960648, 0.290879, 2.96181, 5.35823)
 script = ExtResource("2_m0kki")
 priority = 1
 tween_resource = SubResource("Resource_q88rd")
 camera_3d_resource = SubResource("Resource_lhcdi")
 
 [node name="PhantomCameraGauche" type="Node3D" parent="."]
-transform = Transform3D(-0.760587, 0.250369, -0.599018, -0.0104937, 0.917789, 0.396929, 0.649151, 0.308185, -0.695432, 1.42553, 2.74238, 1.3755)
+transform = Transform3D(0.999925, 0.012217, 0, -0.0112122, 0.917686, 0.397148, 0.00485196, -0.397118, 0.917755, -6.21503, 2.74238, 4.92859)
 script = ExtResource("2_m0kki")
 tween_resource = SubResource("Resource_7crwf")
 camera_3d_resource = SubResource("Resource_85idd")
 
 [node name="PhantomCameraDroite" type="Node3D" parent="."]
-transform = Transform3D(-0.736944, -0.355776, 0.57475, 0.0125952, 0.842904, 0.537916, -0.675836, 0.403653, -0.616692, -1.78635, 2.31766, 1.76276)
+transform = Transform3D(0.999876, -0.0157073, 0, 0.0132474, 0.843287, 0.5373, -0.00843953, -0.537233, 0.843392, 6.20311, 2.31766, 4.303)
 script = ExtResource("2_m0kki")
 tween_resource = SubResource("Resource_qlif0")
 camera_3d_resource = SubResource("Resource_1gak3")
@@ -352,7 +419,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.02232, 0.15, 7.91369)
 [node name="Objet_briilance" parent="table_chaise" instance=ExtResource("8_mqrtj")]
 
 [node name="Scene_souvenir" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
-transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 2.13238, 2)
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 1.68427, 2)
 script = ExtResource("2_m0kki")
 follow_mode = 6
 follow_target = NodePath("../Mamie")
@@ -430,6 +497,7 @@ stream = ExtResource("29_ry6sd")
 
 [node name="Fenetre" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2683, 0)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Fenetre"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.799, 10)
@@ -454,6 +522,113 @@ trail_enabled = true
 process_material = SubResource("ParticleProcessMaterial_a5r5d")
 draw_pass_1 = SubResource("PlaneMesh_btwse")
 
+[node name="Piece" parent="." instance=ExtResource("37_8kt5y")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Objet_briilance" parent="Piece/Confiture" index="0" instance=ExtResource("8_mqrtj")]
+transform = Transform3D(4, -4.37072e-14, 5.68434e-14, 1.26823e-13, 4, -8.52651e-14, -1.42109e-14, 0, 4, 21.5081, 4.00266, 0)
+
+[node name="Objet_briilance" parent="Piece/Roues" index="0" instance=ExtResource("8_mqrtj")]
+transform = Transform3D(0.995953, -0.0892759, 0.0103057, -0.0219007, -0.129891, 0.991286, -0.0871594, -0.987501, -0.131321, -1.99868, -0.922338, -0.636574)
+
+[node name="Objet_briilance" parent="Piece/Livre_020" index="0" instance=ExtResource("8_mqrtj")]
+transform = Transform3D(6, -3.38813e-21, -5.68434e-14, -5.68434e-14, -2.62268e-07, -6, 1.49082e-21, 6, -2.62268e-07, -13.6989, 20.6045, 0)
+
+[node name="Objet_briilance" parent="Piece/Barbie" index="0" instance=ExtResource("8_mqrtj")]
+transform = Transform3D(4, 0, 5.96046e-08, 0, 4, 0, -1.78814e-07, 0, 4, 2.41751, -14.3062, -1.72766)
+
+[node name="Objet_briilance" parent="Piece/Tele" index="0" instance=ExtResource("8_mqrtj")]
+transform = Transform3D(2, 1.32635e-14, -5.79768e-22, 0, -8.74228e-08, -2, -1.32635e-14, 2, -8.74228e-08, 0.135876, 0.0898724, -0.558885)
+
+[node name="Collision_Mur" type="StaticBody3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Sol" type="CollisionShape3D" parent="Collision_Mur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47979, -0.454826, -1.1163)
+shape = SubResource("BoxShape3D_bv2gb")
+
+[node name="Mur_arriere" type="CollisionShape3D" parent="Collision_Mur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.83902, 0.716248, -3.89864)
+shape = SubResource("BoxShape3D_tahs0")
+
+[node name="Mur_ext_droite" type="CollisionShape3D" parent="Collision_Mur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.77445, 0.51535, -1.46381)
+shape = SubResource("BoxShape3D_gjonn")
+
+[node name="Mur_ext_gauche" type="CollisionShape3D" parent="Collision_Mur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4945, 0.65033, -1.2229)
+shape = SubResource("BoxShape3D_p7x2v")
+
+[node name="Cuisine_meuble" type="CollisionShape3D" parent="Collision_Mur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.60302, 0.396729, -0.255371)
+shape = SubResource("BoxShape3D_uffxu")
+
+[node name="Table_cuisine" type="CollisionShape3D" parent="Collision_Mur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.08431, 0, -0.493429)
+shape = SubResource("CylinderShape3D_l1iv2")
+
+[node name="Chaise_1" type="CollisionShape3D" parent="Collision_Mur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2059, 0, -0.355595)
+shape = SubResource("CylinderShape3D_6gful")
+
+[node name="Chaise_2" type="CollisionShape3D" parent="Collision_Mur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.45421, 1.19209e-07, 0.394868)
+shape = SubResource("CylinderShape3D_7buoq")
+
+[node name="Chaise_3" type="CollisionShape3D" parent="Collision_Mur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.77837, 0, -1.32938)
+shape = SubResource("CylinderShape3D_pl1k4")
+
+[node name="Frigo_et_meuble" type="CollisionShape3D" parent="Collision_Mur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.90052, 0.503146, -0.947622)
+shape = SubResource("BoxShape3D_j2sje")
+
+[node name="Mur_cuisine" type="CollisionShape3D" parent="Collision_Mur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87916, 0, -0.39006)
+shape = SubResource("BoxShape3D_c8cqj")
+
+[node name="Table_entree" type="CollisionShape3D" parent="Collision_Mur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.613949, 0.276306, -3.57635)
+shape = SubResource("BoxShape3D_k0vhm")
+
+[node name="Bibliotheque" type="CollisionShape3D" parent="Collision_Mur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6777, 0.700256, 0.331894)
+shape = SubResource("BoxShape3D_txvta")
+
+[node name="Commode" type="CollisionShape3D" parent="Collision_Mur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.56585, 0.662537, 0.332397)
+shape = SubResource("BoxShape3D_vko67")
+
+[node name="Mur_salon" type="CollisionShape3D" parent="Collision_Mur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0617, 0.683105, -0.135971)
+shape = SubResource("BoxShape3D_kxgna")
+
+[node name="Meuble_tele" type="CollisionShape3D" parent="Collision_Mur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.40329, 0, 1.10332)
+shape = SubResource("CylinderShape3D_ysmr6")
+
+[node name="Canap_vert" type="CollisionShape3D" parent="Collision_Mur"]
+transform = Transform3D(0.939232, 0, -0.343283, 0, 1, 0, 0.343283, 0, 0.939232, 4.31064, 0.284729, -0.480889)
+shape = SubResource("BoxShape3D_cpman")
+
+[node name="Canap_rouge" type="CollisionShape3D" parent="Collision_Mur"]
+transform = Transform3D(0.984865, 0, -0.173322, 0, 1, 0, 0.173322, 0, 0.984865, 7.51163, 0.23877, -2.98989)
+shape = SubResource("BoxShape3D_4sv7j")
+
+[node name="Table_salon" type="CollisionShape3D" parent="Collision_Mur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.57652, 0.186096, -0.73694)
+shape = SubResource("BoxShape3D_axjnp")
+
+[node name="Mur_bloquant" type="CollisionShape3D" parent="Collision_Mur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.419037, 0.529541, 1.86687)
+shape = SubResource("BoxShape3D_2u7ul")
+
+[node name="Control" parent="." instance=ExtResource("38_s6q42")]
+mouse_filter = 2
+
 [connection signal="body_entered" from="Area_trigger/Droite" to="." method="_on_droite_body_entered"]
 [connection signal="body_entered" from="Area_trigger/Milieu" to="." method="_on_milieu_body_entered"]
 [connection signal="body_entered" from="Area_trigger/Gauche" to="." method="_on_gauche_body_entered"]
+
+[editable path="Piece"]

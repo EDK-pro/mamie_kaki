@@ -6,7 +6,9 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_do4jc"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_iirvd"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_u38ci"]
+
 [ext_resource type="PackedScene" path="res://scene/interface_bouton.tscn" id="6_iiosi"]
+
 
 [sub_resource type="BoxMesh" id="BoxMesh_i52bg"]
 size = Vector3(0.2, 0.2, 0.2)
@@ -3277,6 +3279,8 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kux4g"]
+radius = 0.25
+height = 1.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_fgok3"]
 
@@ -3313,8 +3317,8 @@ far = 4000.0
 [node name="Mamie" type="Node3D"]
 
 [node name="Controlleur_mamie" type="CharacterBody3D" parent="." node_paths=PackedStringArray("modele_mamie", "guizmo_forward", "guizmo_side", "guizmo")]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 15
+collision_mask = 15
 script = ExtResource("1_awg1j")
 modele_mamie = NodePath("Modele_mamie")
 guizmo_forward = NodePath("../Guizmo/Guizmo_forward")
