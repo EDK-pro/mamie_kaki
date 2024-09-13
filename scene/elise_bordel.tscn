@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://xo2ofojwlug8" path="res://script/shader_outline.tres" id="1_xc3ox"]
 [ext_resource type="PackedScene" uid="uid://bwjim2twt32uf" path="res://scene/mamie.tscn" id="2_xkmfd"]
 [ext_resource type="Shader" path="res://script/shader_outline_V2.gdshader" id="3_y1xnc"]
-[ext_resource type="PackedScene" uid="uid://c2n8u6iwj28ej" path="res://asset/asset_visuel/Nintendo DS.glb" id="4_4rggj"]
+[ext_resource type="PackedScene" uid="uid://lin08n0qj84b" path="res://asset/asset_visuel/Nintendo DS.glb" id="4_4rggj"]
 [ext_resource type="PackedScene" uid="uid://dw3vpvlrsjxfs" path="res://scene/objets_base.tscn" id="4_q1jdm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xmwlm"]

@@ -1,12 +1,11 @@
 [gd_scene load_steps=16 format=3 uid="uid://bwjim2twt32uf"]
 
 [ext_resource type="Script" path="res://script/mamie.gd" id="1_awg1j"]
+[ext_resource type="ArrayMesh" uid="uid://da5ihewhn21yl" path="res://scene/Mami.obj" id="2_5sgqu"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_do4jc"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_iirvd"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_u38ci"]
-[ext_resource type="PackedScene" uid="uid://boq3fwg8bodug" path="res://scene/interface_bouton.tscn" id="6_iiosi"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_fjh2q"]
+[ext_resource type="PackedScene" path="res://scene/interface_bouton.tscn" id="6_iiosi"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_i52bg"]
 size = Vector3(0.2, 0.2, 0.2)
@@ -57,7 +56,7 @@ guizmo_side = NodePath("../Guizmo/Guizmo_side")
 guizmo = NodePath("../Guizmo")
 
 [node name="Modele_mamie" type="MeshInstance3D" parent="Controlleur_mamie"]
-mesh = SubResource("CapsuleMesh_fjh2q")
+mesh = ExtResource("2_5sgqu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Controlleur_mamie/Modele_mamie"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.458, 0.8)
