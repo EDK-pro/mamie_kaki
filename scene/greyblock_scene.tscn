@@ -1,4 +1,5 @@
-[gd_scene load_steps=66 format=3 uid="uid://dkgpo83vsvf6n"]
+
+[gd_scene load_steps=70 format=3 uid="uid://dkgpo83vsvf6n"]
 
 [ext_resource type="PackedScene" uid="uid://bwjim2twt32uf" path="res://scene/mamie.tscn" id="1_78l3u"]
 [ext_resource type="Script" path="res://script/Script_scene_greyblock.gd" id="1_a1d8j"]
@@ -24,10 +25,17 @@
 [ext_resource type="AudioStream" uid="uid://bus7o01vtsrv7" path="res://addons/phantom_camera/assets/asset sonore/tourner une page 1.ogg" id="23_kqqrw"]
 [ext_resource type="AudioStream" uid="uid://ctspjkk2rv6or" path="res://addons/phantom_camera/assets/asset sonore/tourner une page 2.mp3" id="24_5apos"]
 [ext_resource type="AudioStream" uid="uid://b86pie2kiymso" path="res://addons/phantom_camera/assets/asset sonore/Radio click + musiques.ogg" id="25_e835v"]
+[ext_resource type="AudioStream" uid="uid://d027mbwnnxyry" path="res://addons/phantom_camera/assets/asset sonore/pas sur gravier.ogg" id="25_xsi2r"]
+[ext_resource type="AudioStream" uid="uid://dpy6x1elr2trs" path="res://addons/phantom_camera/assets/asset sonore/Vélo voix off.ogg" id="26_dnc5b"]
 [ext_resource type="AudioStream" uid="uid://dk138re87fcu5" path="res://addons/phantom_camera/assets/asset sonore/glass put down.ogg" id="26_ni2x7"]
+[ext_resource type="AudioStream" uid="uid://ednusw2v7l6e" path="res://addons/phantom_camera/assets/asset sonore/Tutoriel voix off cut.ogg" id="27_lcisl"]
 [ext_resource type="AudioStream" uid="uid://ddqbg6730038v" path="res://addons/phantom_camera/assets/asset sonore/glass pick up.ogg" id="27_w8uhp"]
+[ext_resource type="AudioStream" uid="uid://wcc6nmjx5bi6" path="res://addons/phantom_camera/assets/asset sonore/confiture voix off.ogg" id="28_66xso"]
 [ext_resource type="AudioStream" uid="uid://d0kksmpr8is7o" path="res://addons/phantom_camera/assets/asset sonore/click.ogg" id="28_l2idd"]
+[ext_resource type="AudioStream" uid="uid://bg2spgvuegsxo" path="res://addons/phantom_camera/assets/asset sonore/Télé meuble voix off.ogg" id="29_866dk"]
 [ext_resource type="AudioStream" uid="uid://dhkdxynmq6ny" path="res://addons/phantom_camera/assets/asset sonore/cat purr.ogg" id="29_ry6sd"]
+[ext_resource type="AudioStream" uid="uid://bmx8k4j5aeb37" path="res://addons/phantom_camera/assets/asset sonore/Poupée voix off.ogg" id="30_aow77"]
+[ext_resource type="AudioStream" uid="uid://5kxsk0xbllmr" path="res://addons/phantom_camera/assets/asset sonore/masque cousu voix off.ogg" id="31_dhscp"]
 [ext_resource type="Texture2D" uid="uid://rmc835gwvdmy" path="res://asset/asset_visuel/Flare00.PNG" id="29_tgxcj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_puydc"]
@@ -383,6 +391,27 @@ autoplay = true
 
 [node name="Tourner une page" type="AudioStreamPlayer3D" parent="."]
 stream = SubResource("AudioStreamRandomizer_yga78")
+
+[node name="Pas sur gravier" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("25_xsi2r")
+
+[node name="Voix off Vélo" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("26_dnc5b")
+
+[node name="Voix off Tutoriel" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("27_lcisl")
+
+[node name="Voix off Confiture" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("28_66xso")
+
+[node name="Voix off télé meuble" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("29_866dk")
+
+[node name="Voix off Poupée" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("30_aow77")
+
+[node name="Voix off masque cousu" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("31_dhscp")
 
 [node name="radio click + musique radio" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("25_e835v")
