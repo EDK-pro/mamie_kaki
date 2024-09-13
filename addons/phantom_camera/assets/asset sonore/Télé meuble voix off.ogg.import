@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bg2spgvuegsxo"
+path="res://.godot/imported/Télé meuble voix off.ogg-7640d8c281e06f84df665874f8f2aef9.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/phantom_camera/assets/asset sonore/Télé meuble voix off.ogg"
+dest_files=["res://.godot/imported/Télé meuble voix off.ogg-7640d8c281e06f84df665874f8f2aef9.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

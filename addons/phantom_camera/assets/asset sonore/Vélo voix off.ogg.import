@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dpy6x1elr2trs"
+path="res://.godot/imported/Vélo voix off.ogg-4a1a85aad5d4ad7ad068c0667c16f25a.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/phantom_camera/assets/asset sonore/Vélo voix off.ogg"
+dest_files=["res://.godot/imported/Vélo voix off.ogg-4a1a85aad5d4ad7ad068c0667c16f25a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

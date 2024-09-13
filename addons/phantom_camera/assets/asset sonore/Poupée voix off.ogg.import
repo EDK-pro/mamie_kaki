@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bmx8k4j5aeb37"
+path="res://.godot/imported/Poupée voix off.ogg-76c637b83f99437cebd554a2285be882.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/phantom_camera/assets/asset sonore/Poupée voix off.ogg"
+dest_files=["res://.godot/imported/Poupée voix off.ogg-76c637b83f99437cebd554a2285be882.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
