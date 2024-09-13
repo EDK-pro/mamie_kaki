@@ -14,6 +14,21 @@ height = 128
 color_ramp = SubResource("Gradient_6lwbu")
 noise = SubResource("FastNoiseLite_r2143")
 
+[sub_resource type="Animation" id="Animation_3b015"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(256, 654)]
+}
+
 [sub_resource type="Animation" id="Animation_krla0"]
 resource_name = "textbar"
 length = 2.5
@@ -28,21 +43,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 0.435275, 9.84915),
 "update": 0,
 "values": [Vector2(259.5, 661), Vector2(259.5, 630), Vector2(259.5, 625), Vector2(259.5, 448), Vector2(259.5, 442), Vector2(259.5, 460)]
-}
-
-[sub_resource type="Animation" id="Animation_3b015"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(256, 654)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xr34n"]

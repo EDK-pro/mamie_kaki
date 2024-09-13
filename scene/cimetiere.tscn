@@ -1,0 +1,108 @@
+[gd_scene load_steps=19 format=3 uid="uid://c1d8t53njlc3q"]
+
+[ext_resource type="PackedScene" uid="uid://bmdxdr72me0sf" path="res://asset/asset_visuel/tombe.glb" id="1_eh1qk"]
+[ext_resource type="PackedScene" uid="uid://b1cvg1yuqix2h" path="res://asset/asset_visuel/banc.glb" id="2_5a7ns"]
+[ext_resource type="PackedScene" uid="uid://dq6c7f72cdchl" path="res://asset/asset_visuel/buisson.glb" id="3_hf1ev"]
+[ext_resource type="PackedScene" uid="uid://bwjim2twt32uf" path="res://scene/mamie.tscn" id="4_71x0h"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="5_ujcro"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_cpyys"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="7_lgeyf"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="8_rf8qc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uk7nn"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_bottom_color = Color(0.2, 0.258824, 0.133333, 1)
+ground_horizon_color = Color(0.357432, 0.521368, 0.382984, 1)
+
+[sub_resource type="Sky" id="Sky_us888"]
+sky_material = SubResource("ProceduralSkyMaterial_uk7nn")
+
+[sub_resource type="Environment" id="Environment_r8651"]
+background_mode = 2
+sky = SubResource("Sky_us888")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_m63g3"]
+noise_type = 2
+frequency = 0.1945
+fractal_octaves = 10
+fractal_lacunarity = 4.0
+fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_52mpk"]
+noise = SubResource("FastNoiseLite_m63g3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2phhc"]
+albedo_color = Color(0.454902, 1, 0.262745, 1)
+albedo_texture = SubResource("NoiseTexture2D_52mpk")
+
+[sub_resource type="BoxMesh" id="BoxMesh_eck1h"]
+material = SubResource("StandardMaterial3D_2phhc")
+size = Vector3(20, 0.5, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i0el8"]
+size = Vector3(20, 0.5, 20)
+
+[sub_resource type="Resource" id="Resource_xu6x1"]
+script = ExtResource("6_cpyys")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="Resource" id="Resource_60lqh"]
+script = ExtResource("7_lgeyf")
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 0.0
+projection = 0
+fov = 75.0
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
+
+[node name="Cimetiere" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_r8651")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, -0.381184, 0.895345, 0.230337, -0.323577, 0.104181, -0.940449, 0, 2.56658, 0)
+light_color = Color(0.929412, 0.301961, 0.0431373, 1)
+light_energy = 7.943
+shadow_enabled = true
+
+[node name="tombe" parent="." instance=ExtResource("1_eh1qk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6188, 0.357124, -0.211946)
+
+[node name="banc" parent="." instance=ExtResource("2_5a7ns")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.53839, 0.787775, -0.256663)
+
+[node name="buisson" parent="." instance=ExtResource("3_hf1ev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12552, 0.512348, 2.82833)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Sol" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_eck1h")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_i0el8")
+
+[node name="Mamie" parent="." instance=ExtResource("4_71x0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54142, 0)
+
+[node name="PhantomCamera3D" type="Node3D" parent="."]
+transform = Transform3D(0.469472, 0.352075, -0.809716, 0, 0.91706, 0.398749, 0.882948, -0.187201, 0.430534, -3.68665, 2.26247, 2.52052)
+script = ExtResource("5_ujcro")
+priority = 1
+tween_resource = SubResource("Resource_xu6x1")
+camera_3d_resource = SubResource("Resource_60lqh")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.469472, 0.352075, -0.809716, 0, 0.91706, 0.398749, 0.882948, -0.187201, 0.430534, -3.68665, 2.26247, 2.52052)
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D"]
+script = ExtResource("8_rf8qc")
