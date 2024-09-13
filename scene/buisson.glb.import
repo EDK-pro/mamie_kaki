@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dat277ig0r4w3"
-path="res://.godot/imported/buisson.glb-3c1f49484cee422278558c07776aba1c.scn"
+path="res://.godot/imported/Buisson.glb-b9884d927787cf8fbd708ac67be4a00c.scn"
 
 [deps]
 
-source_file="res://scene/buisson.glb"
-dest_files=["res://.godot/imported/buisson.glb-3c1f49484cee422278558c07776aba1c.scn"]
+source_file="res://scene/Buisson.glb"
+dest_files=["res://.godot/imported/Buisson.glb-b9884d927787cf8fbd708ac67be4a00c.scn"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://y0b41scril0h"
-path="res://.godot/imported/banc.glb-74bf5cf81479fcf87fd70613cf51962b.scn"
+path="res://.godot/imported/Banc.glb-41a0a320e5572c17a48cadf0adaf065f.scn"
 
 [deps]
 
-source_file="res://scene/banc.glb"
-dest_files=["res://.godot/imported/banc.glb-74bf5cf81479fcf87fd70613cf51962b.scn"]
+source_file="res://scene/Banc.glb"
+dest_files=["res://.godot/imported/Banc.glb-41a0a320e5572c17a48cadf0adaf065f.scn"]
 
 [params]
 

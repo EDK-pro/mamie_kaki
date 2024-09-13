@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b88ys7m17n43x"
-path="res://.godot/imported/tombe.glb-881d487e010f76c2e157307402a85926.scn"
+path="res://.godot/imported/Tombe.glb-52a82ae60869af7f23fc1c0043c877a6.scn"
 
 [deps]
 
-source_file="res://scene/tombe.glb"
-dest_files=["res://.godot/imported/tombe.glb-881d487e010f76c2e157307402a85926.scn"]
+source_file="res://scene/Tombe.glb"
+dest_files=["res://.godot/imported/Tombe.glb-52a82ae60869af7f23fc1c0043c877a6.scn"]
 
 [params]
 
