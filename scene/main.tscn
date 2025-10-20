@@ -1,50 +1,53 @@
-[gd_scene load_steps=100 format=3 uid="uid://dkgpo83vsvf6n"]
+[gd_scene load_steps=115 format=3 uid="uid://dkgpo83vsvf6n"]
 
-[ext_resource type="PackedScene" uid="uid://bwjim2twt32uf" path="res://scene/mamie.tscn" id="1_78l3u"]
-[ext_resource type="Script" path="res://script/Script_scene_greyblock.gd" id="1_a1d8j"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_m0kki"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_l1xyf"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_nbc5r"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="4_eic3h"]
-[ext_resource type="PackedScene" uid="uid://bo5w4mdnb02f8" path="res://asset/asset_visuel/Nintendo DS.glb" id="7_agyvh"]
-[ext_resource type="PackedScene" uid="uid://bm4tkdysdotsr" path="res://asset/asset_visuel/table_chaise.glb" id="7_mlwqy"]
-[ext_resource type="PackedScene" uid="uid://dw3vpvlrsjxfs" path="res://scene/objets_base.tscn" id="8_mqrtj"]
-[ext_resource type="AudioStream" uid="uid://bxhbtg748m7gb" path="res://addons/phantom_camera/assets/asset sonore/cat sound 1.ogg" id="11_i8rbw"]
-[ext_resource type="AudioStream" uid="uid://d1ye3qa73h6m2" path="res://addons/phantom_camera/assets/asset sonore/cat sound 2.ogg" id="12_t5y5h"]
-[ext_resource type="AudioStream" uid="uid://b0qwxmw3y1ya7" path="res://addons/phantom_camera/assets/asset sonore/cat sound 3.ogg" id="13_q7d78"]
-[ext_resource type="AudioStream" uid="uid://b4ss8kso3exlg" path="res://addons/phantom_camera/assets/asset sonore/cat sound 4.ogg" id="14_26qbn"]
-[ext_resource type="AudioStream" uid="uid://dndf1khal8vg0" path="res://addons/phantom_camera/assets/asset sonore/cat sound 5.ogg" id="15_c4qwj"]
-[ext_resource type="AudioStream" uid="uid://sb0gtyxbdh6l" path="res://addons/phantom_camera/assets/asset sonore/fond sonore extérieur.ogg" id="16_6jga2"]
-[ext_resource type="AudioStream" uid="uid://etl4dugi8xn7" path="res://addons/phantom_camera/assets/asset sonore/bruit quand tu garde un objet dans ta poche.ogg" id="17_h0upu"]
-[ext_resource type="AudioStream" uid="uid://btscqqvv8tsu0" path="res://addons/phantom_camera/assets/asset sonore/door open.ogg" id="18_s3vp5"]
-[ext_resource type="AudioStream" uid="uid://dwgogovgyhvj" path="res://addons/phantom_camera/assets/asset sonore/door close.ogg" id="19_dvfjw"]
-[ext_resource type="AudioStream" uid="uid://ddphi1iq63m7d" path="res://addons/phantom_camera/assets/asset sonore/jingle tv + jeu télé.ogg" id="20_sqjhu"]
-[ext_resource type="AudioStream" uid="uid://bpttpe0d1hcln" path="res://addons/phantom_camera/assets/asset sonore/pas contre le sol intérieur.ogg" id="21_1ie1l"]
-[ext_resource type="AudioStream" uid="uid://cccsqed6ejxib" path="res://addons/phantom_camera/assets/asset sonore/intérieur maison ambiance.ogg" id="22_un3kn"]
-[ext_resource type="AudioStream" uid="uid://bus7o01vtsrv7" path="res://addons/phantom_camera/assets/asset sonore/tourner une page 1.ogg" id="23_kqqrw"]
-[ext_resource type="AudioStream" uid="uid://ctspjkk2rv6or" path="res://addons/phantom_camera/assets/asset sonore/tourner une page 2.mp3" id="24_5apos"]
-[ext_resource type="AudioStream" uid="uid://b86pie2kiymso" path="res://addons/phantom_camera/assets/asset sonore/Radio click + musiques.ogg" id="25_e835v"]
-[ext_resource type="AudioStream" uid="uid://d027mbwnnxyry" path="res://addons/phantom_camera/assets/asset sonore/pas sur gravier.ogg" id="25_xsi2r"]
-[ext_resource type="AudioStream" uid="uid://dpy6x1elr2trs" path="res://addons/phantom_camera/assets/asset sonore/Vélo voix off.ogg" id="26_dnc5b"]
-[ext_resource type="AudioStream" uid="uid://dk138re87fcu5" path="res://addons/phantom_camera/assets/asset sonore/glass put down.ogg" id="26_ni2x7"]
-[ext_resource type="AudioStream" uid="uid://ednusw2v7l6e" path="res://addons/phantom_camera/assets/asset sonore/Tutoriel voix off cut.ogg" id="27_lcisl"]
-[ext_resource type="AudioStream" uid="uid://ddqbg6730038v" path="res://addons/phantom_camera/assets/asset sonore/glass pick up.ogg" id="27_w8uhp"]
-[ext_resource type="AudioStream" uid="uid://wcc6nmjx5bi6" path="res://addons/phantom_camera/assets/asset sonore/confiture voix off.ogg" id="28_66xso"]
-[ext_resource type="AudioStream" uid="uid://d0kksmpr8is7o" path="res://addons/phantom_camera/assets/asset sonore/click.ogg" id="28_l2idd"]
-[ext_resource type="AudioStream" uid="uid://bg2spgvuegsxo" path="res://addons/phantom_camera/assets/asset sonore/Télé meuble voix off.ogg" id="29_866dk"]
-[ext_resource type="AudioStream" uid="uid://dhkdxynmq6ny" path="res://addons/phantom_camera/assets/asset sonore/cat purr.ogg" id="29_ry6sd"]
-[ext_resource type="Texture2D" uid="uid://bmryjcd5r34bl" path="res://asset/asset_visuel/Flare00.PNG" id="29_tgxcj"]
-[ext_resource type="AudioStream" uid="uid://bmx8k4j5aeb37" path="res://addons/phantom_camera/assets/asset sonore/Poupée voix off.ogg" id="30_aow77"]
-[ext_resource type="AudioStream" uid="uid://5kxsk0xbllmr" path="res://addons/phantom_camera/assets/asset sonore/masque cousu voix off.ogg" id="31_dhscp"]
-[ext_resource type="PackedScene" uid="uid://b6qglpepg6ywo" path="res://scene/Piece.glb" id="37_8kt5y"]
-[ext_resource type="PackedScene" uid="uid://cc1jveh1jjmrc" path="res://scene/Texte_Souvenir.tscn" id="38_s6q42"]
-[ext_resource type="PackedScene" uid="uid://hsw5vy5g6uio" path="res://scene/kaki_1.tscn" id="39_6ke00"]
-[ext_resource type="PackedScene" uid="uid://c0ory46e84hkm" path="res://scene/kaki_2.tscn" id="40_lw2i4"]
-[ext_resource type="PackedScene" uid="uid://b2k5rlu84gjjr" path="res://scene/kaki_3.tscn" id="41_f6wrq"]
-[ext_resource type="PackedScene" uid="uid://bc3kt4yvfy57h" path="res://scene/kaki_4.tscn" id="42_orlc3"]
-[ext_resource type="PackedScene" uid="uid://dqmv8igj8qfli" path="res://scene/kaki_5.tscn" id="43_avils"]
+[ext_resource type="Script" path="res://script/Script_scene_greyblock.gd" id="1_3lp6w"]
+[ext_resource type="PackedScene" uid="uid://bwjim2twt32uf" path="res://scene/mamie.tscn" id="2_poj6r"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_7aiua"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="4_g1p2k"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_bn647"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="6_3qd28"]
+[ext_resource type="PackedScene" uid="uid://bo5w4mdnb02f8" path="res://asset/asset_visuel/Nintendo DS.glb" id="7_vo1bw"]
+[ext_resource type="PackedScene" uid="uid://dw3vpvlrsjxfs" path="res://scene/objets_base.tscn" id="8_c2uab"]
+[ext_resource type="PackedScene" uid="uid://bm4tkdysdotsr" path="res://asset/asset_visuel/table_chaise.glb" id="9_ruygm"]
+[ext_resource type="AudioStream" uid="uid://bxhbtg748m7gb" path="res://addons/phantom_camera/assets/asset sonore/cat sound 1.ogg" id="10_vpqr0"]
+[ext_resource type="AudioStream" uid="uid://d1ye3qa73h6m2" path="res://addons/phantom_camera/assets/asset sonore/cat sound 2.ogg" id="11_urnh1"]
+[ext_resource type="AudioStream" uid="uid://b0qwxmw3y1ya7" path="res://addons/phantom_camera/assets/asset sonore/cat sound 3.ogg" id="12_rpms5"]
+[ext_resource type="AudioStream" uid="uid://b4ss8kso3exlg" path="res://addons/phantom_camera/assets/asset sonore/cat sound 4.ogg" id="13_icyoy"]
+[ext_resource type="AudioStream" uid="uid://dndf1khal8vg0" path="res://addons/phantom_camera/assets/asset sonore/cat sound 5.ogg" id="14_g1xcu"]
+[ext_resource type="AudioStream" uid="uid://sb0gtyxbdh6l" path="res://addons/phantom_camera/assets/asset sonore/fond sonore extérieur.ogg" id="15_h5m8l"]
+[ext_resource type="AudioStream" uid="uid://etl4dugi8xn7" path="res://addons/phantom_camera/assets/asset sonore/bruit quand tu garde un objet dans ta poche.ogg" id="16_k48ao"]
+[ext_resource type="AudioStream" uid="uid://btscqqvv8tsu0" path="res://addons/phantom_camera/assets/asset sonore/door open.ogg" id="17_xkcb2"]
+[ext_resource type="AudioStream" uid="uid://dwgogovgyhvj" path="res://addons/phantom_camera/assets/asset sonore/door close.ogg" id="18_yy01u"]
+[ext_resource type="AudioStream" uid="uid://ddphi1iq63m7d" path="res://addons/phantom_camera/assets/asset sonore/jingle tv + jeu télé.ogg" id="19_gr6k3"]
+[ext_resource type="AudioStream" uid="uid://bpttpe0d1hcln" path="res://addons/phantom_camera/assets/asset sonore/pas contre le sol intérieur.ogg" id="20_syd3u"]
+[ext_resource type="AudioStream" uid="uid://cccsqed6ejxib" path="res://addons/phantom_camera/assets/asset sonore/intérieur maison ambiance.ogg" id="21_mract"]
+[ext_resource type="AudioStream" uid="uid://bus7o01vtsrv7" path="res://addons/phantom_camera/assets/asset sonore/tourner une page 1.ogg" id="22_m5ket"]
+[ext_resource type="AudioStream" uid="uid://ctspjkk2rv6or" path="res://addons/phantom_camera/assets/asset sonore/tourner une page 2.mp3" id="23_umews"]
+[ext_resource type="AudioStream" uid="uid://d027mbwnnxyry" path="res://addons/phantom_camera/assets/asset sonore/pas sur gravier.ogg" id="24_ikpdw"]
+[ext_resource type="AudioStream" uid="uid://dpy6x1elr2trs" path="res://addons/phantom_camera/assets/asset sonore/Vélo voix off.ogg" id="25_l3vjv"]
+[ext_resource type="AudioStream" uid="uid://ednusw2v7l6e" path="res://addons/phantom_camera/assets/asset sonore/Tutoriel voix off cut.ogg" id="26_cxxi0"]
+[ext_resource type="AudioStream" uid="uid://wcc6nmjx5bi6" path="res://addons/phantom_camera/assets/asset sonore/confiture voix off.ogg" id="27_7mlax"]
+[ext_resource type="AudioStream" uid="uid://bg2spgvuegsxo" path="res://addons/phantom_camera/assets/asset sonore/Télé meuble voix off.ogg" id="28_3vpvg"]
+[ext_resource type="AudioStream" uid="uid://bmx8k4j5aeb37" path="res://addons/phantom_camera/assets/asset sonore/Poupée voix off.ogg" id="29_yjv5e"]
+[ext_resource type="AudioStream" uid="uid://5kxsk0xbllmr" path="res://addons/phantom_camera/assets/asset sonore/masque cousu voix off.ogg" id="30_mjphh"]
+[ext_resource type="AudioStream" uid="uid://b86pie2kiymso" path="res://addons/phantom_camera/assets/asset sonore/Radio click + musiques.ogg" id="31_op5oh"]
+[ext_resource type="AudioStream" uid="uid://dk138re87fcu5" path="res://addons/phantom_camera/assets/asset sonore/glass put down.ogg" id="32_b4p5n"]
+[ext_resource type="AudioStream" uid="uid://ddqbg6730038v" path="res://addons/phantom_camera/assets/asset sonore/glass pick up.ogg" id="33_5eoc1"]
+[ext_resource type="AudioStream" uid="uid://d0kksmpr8is7o" path="res://addons/phantom_camera/assets/asset sonore/click.ogg" id="34_mbkxd"]
+[ext_resource type="AudioStream" uid="uid://dhkdxynmq6ny" path="res://addons/phantom_camera/assets/asset sonore/cat purr.ogg" id="35_x384e"]
+[ext_resource type="Texture2D" uid="uid://bmryjcd5r34bl" path="res://asset/asset_visuel/Flare00.PNG" id="36_7s4we"]
+[ext_resource type="PackedScene" uid="uid://b6qglpepg6ywo" path="res://scene/Piece.glb" id="37_hka50"]
+[ext_resource type="PackedScene" uid="uid://cc1jveh1jjmrc" path="res://scene/Texte_Souvenir.tscn" id="38_skmge"]
+[ext_resource type="PackedScene" uid="uid://hsw5vy5g6uio" path="res://scene/kaki_1.tscn" id="39_cxj6p"]
+[ext_resource type="PackedScene" uid="uid://c0ory46e84hkm" path="res://scene/kaki_2.tscn" id="40_b0540"]
+[ext_resource type="PackedScene" uid="uid://b2k5rlu84gjjr" path="res://scene/kaki_3.tscn" id="41_ul01p"]
+[ext_resource type="PackedScene" uid="uid://bc3kt4yvfy57h" path="res://scene/kaki_4.tscn" id="42_ng86p"]
+[ext_resource type="PackedScene" uid="uid://dqmv8igj8qfli" path="res://scene/kaki_5.tscn" id="43_bg5ht"]
+[ext_resource type="PackedScene" uid="uid://bvligxvxun1g1" path="res://scene/intro_outro.tscn" id="44_cf884"]
+[ext_resource type="Shader" path="res://asset/asset_visuel/pixelate.gdshader" id="45_pgqg3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_puydc"]
+sky_top_color = Color(0.384314, 0.454902, 0.54902, 1)
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_bottom_color = Color(0.2, 0.45098, 0.133333, 1)
 ground_horizon_color = Color(0.341176, 0.654902, 0.670588, 1)
@@ -112,13 +115,13 @@ size = Vector3(4.99924, 0.2, 1.3912)
 size = Vector3(0.863162, 0.358911, 1.78552)
 
 [sub_resource type="Resource" id="Resource_q88rd"]
-script = ExtResource("3_l1xyf")
+script = ExtResource("5_bn647")
 duration = 1.0
 transition = 0
 ease = 2
 
 [sub_resource type="Resource" id="Resource_lhcdi"]
-script = ExtResource("4_eic3h")
+script = ExtResource("6_3qd28")
 cull_mask = 1048575
 h_offset = 0.0
 v_offset = 0.0
@@ -130,13 +133,13 @@ near = 0.05
 far = 4000.0
 
 [sub_resource type="Resource" id="Resource_7crwf"]
-script = ExtResource("3_l1xyf")
+script = ExtResource("5_bn647")
 duration = 1.0
 transition = 0
 ease = 2
 
 [sub_resource type="Resource" id="Resource_85idd"]
-script = ExtResource("4_eic3h")
+script = ExtResource("6_3qd28")
 cull_mask = 1048575
 h_offset = 0.0
 v_offset = 0.0
@@ -148,13 +151,13 @@ near = 0.05
 far = 4000.0
 
 [sub_resource type="Resource" id="Resource_qlif0"]
-script = ExtResource("3_l1xyf")
+script = ExtResource("5_bn647")
 duration = 1.0
 transition = 0
 ease = 2
 
 [sub_resource type="Resource" id="Resource_1gak3"]
-script = ExtResource("4_eic3h")
+script = ExtResource("6_3qd28")
 cull_mask = 1048575
 h_offset = 0.0
 v_offset = 0.0
@@ -166,13 +169,13 @@ near = 0.05
 far = 4000.0
 
 [sub_resource type="Resource" id="Resource_ngual"]
-script = ExtResource("3_l1xyf")
+script = ExtResource("5_bn647")
 duration = 1.0
 transition = 0
 ease = 2
 
 [sub_resource type="Resource" id="Resource_uebgi"]
-script = ExtResource("4_eic3h")
+script = ExtResource("6_3qd28")
 cull_mask = 1048575
 h_offset = 0.0
 v_offset = 0.0
@@ -187,16 +190,16 @@ far = 4000.0
 playback_mode = 1
 random_volume_offset_db = 3.43
 streams_count = 5
-stream_0/stream = ExtResource("11_i8rbw")
-stream_1/stream = ExtResource("12_t5y5h")
-stream_2/stream = ExtResource("13_q7d78")
-stream_3/stream = ExtResource("14_26qbn")
-stream_4/stream = ExtResource("15_c4qwj")
+stream_0/stream = ExtResource("10_vpqr0")
+stream_1/stream = ExtResource("11_urnh1")
+stream_2/stream = ExtResource("12_rpms5")
+stream_3/stream = ExtResource("13_icyoy")
+stream_4/stream = ExtResource("14_g1xcu")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_yga78"]
 streams_count = 2
-stream_0/stream = ExtResource("23_kqqrw")
-stream_1/stream = ExtResource("24_5apos")
+stream_0/stream = ExtResource("22_m5ket")
+stream_1/stream = ExtResource("23_umews")
 
 [sub_resource type="BoxMesh" id="BoxMesh_p1o7i"]
 size = Vector3(20, 1, 0.5)
@@ -222,7 +225,7 @@ transparency = 1
 cull_mode = 2
 shading_mode = 0
 albedo_color = Color(1, 1, 1, 0.0705882)
-albedo_texture = ExtResource("29_tgxcj")
+albedo_texture = ExtResource("36_7s4we")
 billboard_mode = 3
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
@@ -293,14 +296,135 @@ size = Vector3(1, 1.37219, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_2u7ul"]
 size = Vector3(20.825, 2.05908, 0.354004)
 
-[node name="Greyblock_scene" type="Node3D" node_paths=PackedStringArray("pcam_milieu", "pcam_gauche", "pcam_droite", "cam_proche", "text", "mamie")]
-script = ExtResource("1_a1d8j")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mx7g4"]
+shader = ExtResource("45_pgqg3")
+shader_parameter/pixel_size = 4
+shader_parameter/screen_size = Vector2(1920, 1080)
+
+[sub_resource type="Resource" id="Resource_es6b1"]
+script = ExtResource("5_bn647")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="Resource" id="Resource_hau7f"]
+script = ExtResource("6_3qd28")
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 0.0
+projection = 0
+fov = 75.0
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
+
+[sub_resource type="Resource" id="Resource_b11mu"]
+script = ExtResource("5_bn647")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="Resource" id="Resource_aq7xx"]
+script = ExtResource("6_3qd28")
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 0.0
+projection = 0
+fov = 75.0
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
+
+[sub_resource type="Resource" id="Resource_eubj3"]
+script = ExtResource("5_bn647")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="Resource" id="Resource_umv32"]
+script = ExtResource("6_3qd28")
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 0.0
+projection = 0
+fov = 75.0
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
+
+[sub_resource type="Resource" id="Resource_3telt"]
+script = ExtResource("5_bn647")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="Resource" id="Resource_cfoo6"]
+script = ExtResource("6_3qd28")
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 0.0
+projection = 0
+fov = 75.0
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
+
+[sub_resource type="Resource" id="Resource_bifkk"]
+script = ExtResource("5_bn647")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="Resource" id="Resource_tqtqd"]
+script = ExtResource("6_3qd28")
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 0.0
+projection = 0
+fov = 75.0
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
+
+[sub_resource type="Resource" id="Resource_xrbdu"]
+script = ExtResource("5_bn647")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="Resource" id="Resource_3mpov"]
+script = ExtResource("6_3qd28")
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 0.0
+projection = 0
+fov = 75.0
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
+
+[node name="Greyblock_scene" type="Node3D" node_paths=PackedStringArray("pcam_milieu", "pcam_gauche", "pcam_droite", "pcam_livre", "pcam_barbie", "pcam_masque", "pcam_tele", "pcam_roues", "pcam_confiture", "cam_proche", "text", "intro_outro", "mamie", "timer")]
+script = ExtResource("1_3lp6w")
 pcam_milieu = NodePath("PhantomCameraMilieu")
 pcam_gauche = NodePath("PhantomCameraGauche")
 pcam_droite = NodePath("PhantomCameraDroite")
+pcam_livre = NodePath("Cam_livre")
+pcam_barbie = NodePath("Cam_barbie")
+pcam_masque = NodePath("Cam_masque")
+pcam_tele = NodePath("Cam_tele")
+pcam_roues = NodePath("Cam_roues")
+pcam_confiture = NodePath("Cam_confiture")
 cam_proche = NodePath("Scene_souvenir")
 text = NodePath("Control")
+intro_outro = NodePath("Control3")
 mamie = NodePath("Mamie")
+timer = NodePath("Timer")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pnk46")
@@ -358,14 +482,14 @@ light_angular_distance = 8.49
 shadow_enabled = true
 shadow_bias = 0.3
 
-[node name="Mamie" parent="." instance=ExtResource("1_78l3u")]
+[node name="Mamie" parent="." instance=ExtResource("2_poj6r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0333146, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.866296, 0.499531, 0, -0.499531, 0.866296, 0.6931, 2.4823, 3.3665)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
-script = ExtResource("3_nbc5r")
+script = ExtResource("3_7aiua")
 
 [node name="Area_trigger" type="Node" parent="."]
 
@@ -398,36 +522,36 @@ shape = SubResource("BoxShape3D_g5nvo")
 
 [node name="PhantomCameraMilieu" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.866296, 0.499531, 0, -0.499531, 0.866296, 0.6931, 2.4823, 3.3665)
-script = ExtResource("2_m0kki")
+script = ExtResource("4_g1p2k")
 priority = 1
 tween_resource = SubResource("Resource_q88rd")
 camera_3d_resource = SubResource("Resource_lhcdi")
 
 [node name="PhantomCameraGauche" type="Node3D" parent="."]
 transform = Transform3D(0.999925, 0.012217, 0, -0.0112122, 0.917686, 0.397148, 0.00485196, -0.397118, 0.917755, -6.21503, 2.74238, 4.92859)
-script = ExtResource("2_m0kki")
+script = ExtResource("4_g1p2k")
 tween_resource = SubResource("Resource_7crwf")
 camera_3d_resource = SubResource("Resource_85idd")
 
 [node name="PhantomCameraDroite" type="Node3D" parent="."]
 transform = Transform3D(0.999876, -0.0157073, 0, 0.0132474, 0.843287, 0.5373, -0.00843953, -0.537233, 0.843392, 6.20311, 2.31766, 4.303)
-script = ExtResource("2_m0kki")
+script = ExtResource("4_g1p2k")
 tween_resource = SubResource("Resource_qlif0")
 camera_3d_resource = SubResource("Resource_1gak3")
 
-[node name="Nintendo DS" parent="." instance=ExtResource("7_agyvh")]
+[node name="Nintendo DS" parent="." instance=ExtResource("7_vo1bw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.93668, 0.15, 8.98242)
 
-[node name="Objet_briilance" parent="Nintendo DS" instance=ExtResource("8_mqrtj")]
+[node name="Objet_briilance" parent="Nintendo DS" instance=ExtResource("8_c2uab")]
 
-[node name="table_chaise" parent="." instance=ExtResource("7_mlwqy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.02232, 0.15, 7.91369)
+[node name="table_chaise" parent="." instance=ExtResource("9_ruygm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.02232, 0.15, 11.7592)
 
-[node name="Objet_briilance" parent="table_chaise" instance=ExtResource("8_mqrtj")]
+[node name="Objet_briilance" parent="table_chaise" instance=ExtResource("8_c2uab")]
 
 [node name="Scene_souvenir" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
 transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 1.03331, 2)
-script = ExtResource("2_m0kki")
+script = ExtResource("4_g1p2k")
 follow_mode = 6
 follow_target = NodePath("../Mamie")
 tween_resource = SubResource("Resource_ngual")
@@ -436,72 +560,72 @@ follow_offset = Vector3(0, 1, 0)
 follow_distance = 2.0
 spring_length = 2.0
 
+[node name="Camera3D" type="Camera3D" parent="Scene_souvenir"]
+transform = Transform3D(0.725375, -0.137236, 0.674536, 0, 0.979924, 0.199368, -0.688355, -0.144616, 0.710813, 0.40224, 0.526904, 0.322888)
+
 [node name="chat miaulement" type="AudioStreamPlayer3D" parent="."]
 stream = SubResource("AudioStreamRandomizer_su8bt")
-autoplay = true
 
 [node name="fond sonore extérieur" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("16_6jga2")
+stream = ExtResource("15_h5m8l")
 
-[node name="bruit quand tu met un truc dans ta poche" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("17_h0upu")
+[node name="obtain" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("16_k48ao")
 
 [node name="door open" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("18_s3vp5")
+stream = ExtResource("17_xkcb2")
 
 [node name="door close" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("19_dvfjw")
+stream = ExtResource("18_yy01u")
 
 [node name="Jingle tv + jeu télé" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("20_sqjhu")
+stream = ExtResource("19_gr6k3")
 
 [node name="Pas sol intérieur" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.449, 3.1295)
-stream = ExtResource("21_1ie1l")
-autoplay = true
+stream = ExtResource("20_syd3u")
 
 [node name="Ambiance maison intérieur" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("22_un3kn")
-autoplay = true
+stream = ExtResource("21_mract")
 
 [node name="Tourner une page" type="AudioStreamPlayer3D" parent="."]
 stream = SubResource("AudioStreamRandomizer_yga78")
 
 [node name="Pas sur gravier" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("25_xsi2r")
+stream = ExtResource("24_ikpdw")
 
 [node name="Voix off Vélo" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("26_dnc5b")
+stream = ExtResource("25_l3vjv")
 
 [node name="Voix off Tutoriel" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("27_lcisl")
+stream = ExtResource("26_cxxi0")
 
 [node name="Voix off Confiture" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("28_66xso")
+stream = ExtResource("27_7mlax")
 
 [node name="Voix off télé meuble" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("29_866dk")
+stream = ExtResource("28_3vpvg")
 
 [node name="Voix off Poupée" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("30_aow77")
+stream = ExtResource("29_yjv5e")
 
 [node name="Voix off masque cousu" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("31_dhscp")
+stream = ExtResource("30_mjphh")
 
 [node name="radio click + musique radio" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("25_e835v")
+stream = ExtResource("31_op5oh")
 
 [node name="glass put down" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("26_ni2x7")
+stream = ExtResource("32_b4p5n")
 
 [node name="glass pick up" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("27_w8uhp")
+stream = ExtResource("33_5eoc1")
 
 [node name="click de fin radio" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("28_l2idd")
+stream = ExtResource("34_mbkxd")
 
 [node name="Cat purr" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("29_ry6sd")
+stream = ExtResource("35_x384e")
 
 [node name="Fenetre" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2683, 0)
@@ -530,25 +654,25 @@ trail_enabled = true
 process_material = SubResource("ParticleProcessMaterial_a5r5d")
 draw_pass_1 = SubResource("PlaneMesh_btwse")
 
-[node name="Piece" parent="." instance=ExtResource("37_8kt5y")]
+[node name="Piece" parent="." instance=ExtResource("37_hka50")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="Objet_briilance" parent="Piece/Masque" index="0" instance=ExtResource("8_mqrtj")]
+[node name="Objet_briilance" parent="Piece/Masque" index="0" instance=ExtResource("8_c2uab")]
 transform = Transform3D(20, 0, -5.68434e-14, 0, 20, 0, 5.68434e-14, 0, 20, 123.639, 29.7361, 0)
 
-[node name="Objet_briilance" parent="Piece/Confiture" index="0" instance=ExtResource("8_mqrtj")]
+[node name="Objet_briilance" parent="Piece/Confiture" index="0" instance=ExtResource("8_c2uab")]
 transform = Transform3D(4, -4.37072e-14, 5.68434e-14, 1.26823e-13, 4, -8.52651e-14, -1.42109e-14, 0, 4, 21.5081, 4.00266, 0)
 
-[node name="Objet_briilance" parent="Piece/Roues" index="0" instance=ExtResource("8_mqrtj")]
+[node name="Objet_briilance" parent="Piece/Roues" index="0" instance=ExtResource("8_c2uab")]
 transform = Transform3D(0.995953, -0.0892759, 0.0103057, -0.0219007, -0.129891, 0.991286, -0.0871594, -0.987501, -0.131321, -1.99868, -0.922338, -0.636574)
 
-[node name="Objet_briilance" parent="Piece/Livre_020" index="0" instance=ExtResource("8_mqrtj")]
+[node name="Objet_briilance" parent="Piece/Livre_020" index="0" instance=ExtResource("8_c2uab")]
 transform = Transform3D(6, -3.38813e-21, -5.68434e-14, -5.68434e-14, -2.62268e-07, -6, 1.49082e-21, 6, -2.62268e-07, -13.6989, 20.6045, 0)
 
-[node name="Objet_briilance" parent="Piece/Barbie" index="0" instance=ExtResource("8_mqrtj")]
+[node name="Objet_briilance" parent="Piece/Barbie" index="0" instance=ExtResource("8_c2uab")]
 transform = Transform3D(4, 0, 5.96046e-08, 0, 4, 0, -1.78814e-07, 0, 4, 2.41751, -14.3062, -1.72766)
 
-[node name="Objet_briilance" parent="Piece/Tele" index="0" instance=ExtResource("8_mqrtj")]
+[node name="Objet_briilance" parent="Piece/Tele" index="0" instance=ExtResource("8_c2uab")]
 transform = Transform3D(2, 1.32635e-14, -5.79768e-22, 0, -8.74228e-08, -2, -1.32635e-14, 2, -8.74228e-08, 0.135876, 0.0898724, -0.558885)
 
 [node name="Collision_Mur" type="StaticBody3D" parent="."]
@@ -635,39 +759,131 @@ shape = SubResource("BoxShape3D_axjnp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.419037, 0.529541, 1.86687)
 shape = SubResource("BoxShape3D_2u7ul")
 
-[node name="Control" parent="." instance=ExtResource("38_s6q42")]
+[node name="Control" parent="." instance=ExtResource("38_skmge")]
 mouse_filter = 2
 
-[node name="Kaki_1" parent="." instance=ExtResource("39_6ke00")]
+[node name="Kaki_1" parent="." instance=ExtResource("39_cxj6p")]
 transform = Transform3D(0.0402364, 0, 0.0296822, 0, 0.05, 0, -0.0296822, 0, 0.0402364, 6.38263, 0.31269, -0.901946)
 
-[node name="Kaki_2" parent="." instance=ExtResource("40_lw2i4")]
+[node name="Kaki_2" parent="." instance=ExtResource("40_b0540")]
 transform = Transform3D(0.00765015, 0, 0.0494113, 0, 0.05, 0, -0.0494113, 0, 0.00765015, -1.47159, 1.92135, 0.807268)
 visible = false
 
-[node name="Kaki_3" parent="." instance=ExtResource("41_f6wrq")]
+[node name="Kaki_3" parent="." instance=ExtResource("41_ul01p")]
 transform = Transform3D(0.0493351, 0, 0.0081267, 0, 0.05, 0, -0.0081267, 0, 0.0493351, -2.63311, 0.954983, -1.29397)
 visible = false
 
-[node name="Kaki_4" parent="." instance=ExtResource("42_orlc3")]
+[node name="Kaki_4" parent="." instance=ExtResource("42_ng86p")]
 transform = Transform3D(-0.0465947, 0, -0.0181365, 0, 0.05, 0, 0.0181365, 0, -0.0465947, 7.76658, -0.0201682, 1.38416)
 visible = false
 
-[node name="Kaki_5" parent="." instance=ExtResource("43_avils")]
+[node name="Kaki_5" parent="." instance=ExtResource("43_bg5ht")]
 transform = Transform3D(-0.000212927, 0, 0.0499995, 0, 0.05, 0, -0.0499995, 0, -0.000212927, 1.85123, 0.017359, 0.921131)
 visible = false
 
-[node name="Kaki_6" parent="." instance=ExtResource("42_orlc3")]
+[node name="Kaki_6" parent="." instance=ExtResource("42_ng86p")]
 transform = Transform3D(0.0483275, 0, -0.0128237, 0, 0.05, 0, 0.0128237, 0, 0.0483275, 8.62757, 0.852455, -2.45308)
 visible = false
 
-[node name="Kaki_7" parent="." instance=ExtResource("39_6ke00")]
+[node name="Kaki_7" parent="." instance=ExtResource("39_cxj6p")]
 transform = Transform3D(-0.0482657, 0, 0.0130547, 0, 0.05, 0, -0.0130547, 0, -0.0482657, -0.770365, 0.0227202, 1.48613)
 visible = false
+
+[node name="Control3" parent="." instance=ExtResource("44_cf884")]
+
+[node name="Control2" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control2"]
+material = SubResource("ShaderMaterial_mx7g4")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="Cam_livre" type="Node3D" parent="." node_paths=PackedStringArray("follow_target", "look_at_target")]
+transform = Transform3D(0.410212, -0.069939, 0.909308, -3.72529e-09, 0.997055, 0.0766886, -0.91199, -0.0314585, 0.409006, 1.13084, 1.11729, 1.29183)
+script = ExtResource("4_g1p2k")
+follow_mode = 2
+follow_target = NodePath("../Piece/Livre_028")
+look_at_mode = 2
+look_at_target = NodePath("../Piece/Livre_028")
+tween_resource = SubResource("Resource_es6b1")
+camera_3d_resource = SubResource("Resource_hau7f")
+follow_offset = Vector3(2.49, 0.21, 1.12)
+
+[node name="Cam_barbie" type="Node3D" parent="." node_paths=PackedStringArray("follow_target", "look_at_target")]
+transform = Transform3D(0.268413, 0.161949, -0.949579, 0, 0.985756, 0.168122, 0.963128, -0.0451333, 0.264637, 0.490703, 2.23894, 1.11588)
+script = ExtResource("4_g1p2k")
+follow_mode = 2
+follow_target = NodePath("../Piece/Barbie")
+look_at_mode = 2
+look_at_target = NodePath("../Piece/Barbie")
+tween_resource = SubResource("Resource_b11mu")
+camera_3d_resource = SubResource("Resource_aq7xx")
+follow_offset = Vector3(-1.525, 0.27, 0.425)
+
+[node name="Cam_masque" type="Node3D" parent="." node_paths=PackedStringArray("follow_target", "look_at_target")]
+transform = Transform3D(0.50748, -0.399535, 0.763431, 1.49011e-08, 0.885999, 0.463679, -0.861658, -0.235309, 0.449628, 8.21484, 1.30283, 0.251363)
+script = ExtResource("4_g1p2k")
+follow_mode = 2
+follow_target = NodePath("../Piece/Masque")
+look_at_mode = 2
+look_at_target = NodePath("../Piece/Masque")
+tween_resource = SubResource("Resource_eubj3")
+camera_3d_resource = SubResource("Resource_umv32")
+follow_offset = Vector3(1.63, 0.99, 0.96)
+
+[node name="Cam_tele" type="Node3D" parent="." node_paths=PackedStringArray("follow_target", "look_at_target")]
+transform = Transform3D(0.837456, -0.398314, 0.374151, -1.49009e-08, 0.684652, 0.728865, -0.546475, -0.610404, 0.573374, 9.24112, 1.83236, 2.38749)
+script = ExtResource("4_g1p2k")
+follow_mode = 2
+follow_target = NodePath("../Piece/Tele")
+look_at_mode = 2
+look_at_target = NodePath("../Piece/Tele")
+tween_resource = SubResource("Resource_3telt")
+camera_3d_resource = SubResource("Resource_cfoo6")
+follow_offset = Vector3(0.77, 1.5, 1.18)
+
+[node name="Cam_roues" type="Node3D" parent="." node_paths=PackedStringArray("follow_target", "look_at_target")]
+transform = Transform3D(0.719778, 0.347893, -0.600737, -1.49011e-08, 0.865361, 0.501141, 0.694202, -0.360711, 0.622869, 6.7442, 2.12561, -1.63827)
+script = ExtResource("4_g1p2k")
+follow_mode = 2
+follow_target = NodePath("../Piece/Roues")
+look_at_mode = 2
+look_at_target = NodePath("../Piece/Roues")
+tween_resource = SubResource("Resource_bifkk")
+camera_3d_resource = SubResource("Resource_tqtqd")
+follow_offset = Vector3(-1.9, 1.585, 1.97)
+
+[node name="Cam_confiture" type="Node3D" parent="." node_paths=PackedStringArray("follow_target", "look_at_target")]
+transform = Transform3D(0.596603, 0.335578, -0.729007, 0, 0.908377, 0.418147, 0.802537, -0.249467, 0.541941, -3.92081, 1.73588, 0.15206)
+script = ExtResource("4_g1p2k")
+follow_mode = 2
+follow_target = NodePath("../Piece/Confiture")
+look_at_mode = 2
+look_at_target = NodePath("../Piece/Confiture")
+tween_resource = SubResource("Resource_xrbdu")
+camera_3d_resource = SubResource("Resource_3mpov")
+follow_offset = Vector3(-1.325, 0.76, 0.985)
 
 [connection signal="body_entered" from="Area_trigger/Droite" to="." method="_on_droite_body_entered"]
 [connection signal="body_entered" from="Area_trigger/Milieu" to="." method="_on_milieu_body_entered"]
 [connection signal="body_entered" from="Area_trigger/Gauche" to="." method="_on_gauche_body_entered"]
 [connection signal="finished" from="chat miaulement" to="." method="_on_chat_miaulement_finished"]
+[connection signal="finished" from="Tourner une page" to="." method="_on_tourner_une_page_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="Piece"]

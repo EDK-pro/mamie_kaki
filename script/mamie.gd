@@ -7,6 +7,7 @@ extends CharacterBody3D
 var mouse_sensitivity : float = 0.05
 var souris_derniere_position = Vector3.ZERO
 
+var can_move = true
 @export var min_pitch: float = -89.9
 @export var max_pitch: float = 50
 
@@ -24,8 +25,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 func _process(delta: float) -> void:
 	
-
-	bouger_mamie()
+	if can_move:
+		bouger_mamie()
 	
 	move_and_slide()
 	

@@ -1,0 +1,61 @@
+[gd_resource type="AudioBusLayout" load_steps=6 format=3 uid="uid://cyshw8emkf1jo"]
+
+[sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_xehey"]
+resource_name = "Phaser"
+range_max_hz = 6730.0
+rate_hz = 0.19
+feedback = 0.5
+depth = 0.2
+
+[sub_resource type="AudioEffectChorus" id="AudioEffectChorus_w4qrr"]
+resource_name = "Chorus"
+voice_count = 4
+dry = 0.84
+wet = 0.14
+voice/3/delay_ms = 12.0
+voice/3/rate_hz = 1.0
+voice/3/depth_ms = 0.0
+voice/3/level_db = 0.0
+voice/3/cutoff_hz = 16000.0
+voice/3/pan = 0.0
+voice/4/delay_ms = 12.0
+voice/4/rate_hz = 1.0
+voice/4/depth_ms = 0.0
+voice/4/level_db = 0.0
+voice/4/cutoff_hz = 16000.0
+voice/4/pan = 0.0
+
+[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_fi08f"]
+resource_name = "Distortion"
+mode = 2
+keep_hf_hz = 2000.0
+
+[sub_resource type="AudioEffectEQ" id="AudioEffectEQ_3g1x5"]
+resource_name = "EQ"
+band_db/32_hz = -47.0
+band_db/100_hz = -22.4
+band_db/1000_hz = -20.5
+band_db/3200_hz = -37.6
+band_db/10000_hz = -44.8
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_msplw"]
+resource_name = "Compressor"
+ratio = 8.7
+
+[resource]
+bus/1/name = &"End_musique"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = 0.0
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectPhaser_xehey")
+bus/1/effect/0/enabled = true
+bus/1/effect/1/effect = SubResource("AudioEffectChorus_w4qrr")
+bus/1/effect/1/enabled = true
+bus/1/effect/2/effect = SubResource("AudioEffectDistortion_fi08f")
+bus/1/effect/2/enabled = true
+bus/1/effect/3/effect = SubResource("AudioEffectEQ_3g1x5")
+bus/1/effect/3/enabled = true
+bus/1/effect/4/effect = SubResource("AudioEffectCompressor_msplw")
+bus/1/effect/4/enabled = true

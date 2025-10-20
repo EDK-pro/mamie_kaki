@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvligxvxun1g1"]
+
+[ext_resource type="Script" path="res://script/intro_outro.gd" id="1_ndexg"]
+[ext_resource type="PackedScene" uid="uid://c1d8t53njlc3q" path="res://scene/cimetiere.tscn" id="2_8civk"]
+[ext_resource type="AudioStream" uid="uid://btscqqvv8tsu0" path="res://addons/phantom_camera/assets/asset sonore/door open.ogg" id="3_nynrl"]
+[ext_resource type="AudioStream" uid="uid://dwgogovgyhvj" path="res://addons/phantom_camera/assets/asset sonore/door close.ogg" id="4_4wlvl"]
+[ext_resource type="AudioStream" uid="uid://d027mbwnnxyry" path="res://addons/phantom_camera/assets/asset sonore/pas sur gravier.ogg" id="4_m84jb"]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("richtext", "richtextoutro")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ndexg")
+cimetiere = ExtResource("2_8civk")
+richtext = NodePath("Intro")
+richtextoutro = NodePath("Outro")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.00566115, 0.00566115, 0.00566115, 1)
+
+[node name="Intro" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -708.0
+offset_top = -490.0
+offset_right = 708.0
+offset_bottom = 490.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 56
+bbcode_enabled = true
+text = "Je me sens bien patraque aujourd'hui... Ils viennent de partir et ont tout laissé trainer, encore. 
+
+Mais... hehehe, c'est toujours comme ça avec eux, hein ?
+
+Bon et bien... Regardons un peu tout ce qu'ils m'ont laissé, avant d'aller voir Camille. Peut être que mon Minou pourra m'aider à la tâche !
+
+Mais avant tout... Allumons donc cette radio ! Et...
+
+[b]*click*[/b] !"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Outro" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -685.5
+offset_top = -485.0
+offset_right = 685.5
+offset_bottom = 485.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 36
+text = "Que de souvenirs... Des petites choses si simples, et pourtant j'y associe tant de bonnes choses.
+
+Allez Minou, allons voir Camille."
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Space" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1448.0
+offset_top = 978.0
+offset_right = 1878.0
+offset_bottom = 1051.0
+theme_override_font_sizes/normal_font_size = 26
+text = "Appuyer sur espace pour interagir"
+
+[node name="Porte_open" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_nynrl")
+
+[node name="Porte_ferme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_4wlvl")
+
+[node name="Pas_gravier" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_m84jb")
+
+[connection signal="finished" from="Porte_open" to="." method="_on_porte_open_finished"]
+[connection signal="finished" from="Porte_ferme" to="." method="_on_porte_ferme_finished"]
+[connection signal="finished" from="Pas_gravier" to="." method="_on_pas_gravier_finished"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://c1d8t53njlc3q"]
+[gd_scene load_steps=23 format=3 uid="uid://c1d8t53njlc3q"]
 
 [ext_resource type="PackedScene" uid="uid://dyxvy0mogy0s" path="res://asset/asset_visuel/tombe.glb" id="1_eh1qk"]
+[ext_resource type="Script" path="res://script/cimetiere.gd" id="1_r6dxo"]
 [ext_resource type="PackedScene" uid="uid://gklgram354xa" path="res://asset/asset_visuel/banc.glb" id="2_5a7ns"]
 [ext_resource type="PackedScene" uid="uid://b4vkdb63iic70" path="res://asset/asset_visuel/buisson.glb" id="3_hf1ev"]
 [ext_resource type="PackedScene" uid="uid://bwjim2twt32uf" path="res://scene/mamie.tscn" id="4_71x0h"]
@@ -8,11 +9,16 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_cpyys"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="7_lgeyf"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="8_rf8qc"]
+[ext_resource type="AudioStream" uid="uid://sb0gtyxbdh6l" path="res://addons/phantom_camera/assets/asset sonore/fond sonore extérieur.ogg" id="9_7qqcf"]
+[ext_resource type="AudioStream" uid="uid://b86pie2kiymso" path="res://addons/phantom_camera/assets/asset sonore/Radio click + musiques.ogg" id="11_qhejl"]
+[ext_resource type="PackedScene" uid="uid://bc3kt4yvfy57h" path="res://scene/kaki_4.tscn" id="12_h2chm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uk7nn"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_bottom_color = Color(0.2, 0.258824, 0.133333, 1)
-ground_horizon_color = Color(0.357432, 0.521368, 0.382984, 1)
+sky_top_color = Color(0.212296, 0.259463, 0.325061, 1)
+sky_horizon_color = Color(0.228282, 0.234552, 0.244448, 1)
+sky_curve = 0.819624
+ground_bottom_color = Color(0.112943, 0.151961, 0.0686349, 1)
+ground_horizon_color = Color(0.243632, 0.254794, 0.0774016, 1)
 
 [sub_resource type="Sky" id="Sky_us888"]
 sky_material = SubResource("ProceduralSkyMaterial_uk7nn")
@@ -34,12 +40,12 @@ fractal_gain = 1.0
 noise = SubResource("FastNoiseLite_m63g3")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2phhc"]
-albedo_color = Color(0.454902, 1, 0.262745, 1)
+albedo_color = Color(0.145098, 1, 0.117647, 1)
 albedo_texture = SubResource("NoiseTexture2D_52mpk")
 
 [sub_resource type="BoxMesh" id="BoxMesh_eck1h"]
 material = SubResource("StandardMaterial3D_2phhc")
-size = Vector3(20, 0.5, 20)
+size = Vector3(200, 0.5, 200)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i0el8"]
 size = Vector3(20, 0.5, 20)
@@ -62,13 +68,19 @@ frustum_offset = Vector2(0, 0)
 near = 0.05
 far = 4000.0
 
-[node name="Cimetiere" type="Node3D"]
+[node name="Cimetiere" type="Node3D" node_paths=PackedStringArray("fade_out", "label", "credit", "mamie", "musique")]
+script = ExtResource("1_r6dxo")
+fade_out = NodePath("Control/ColorRect")
+label = NodePath("Control/RichTextLabel")
+credit = NodePath("Control/Credit")
+mamie = NodePath("Mamie")
+musique = NodePath("End_musique")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_r8651")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866024, -0.433016, 0.250001, -0.381184, 0.895345, 0.230337, -0.323577, 0.104181, -0.940449, 0, 2.56658, 0)
+transform = Transform3D(-0.887309, -0.38286, 0.257101, -0.392289, 0.919708, 0.0157073, -0.242472, -0.0869206, -0.966257, 0, 2.56658, 0)
 light_color = Color(0.929412, 0.301961, 0.0431373, 1)
 light_energy = 7.943
 shadow_enabled = true
@@ -77,7 +89,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6188, 0.357124, -0.211946)
 
 [node name="banc" parent="." instance=ExtResource("2_5a7ns")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.53839, 0.787775, -0.256663)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.53839, 0.787775, 0.324499)
 
 [node name="buisson" parent="." instance=ExtResource("3_hf1ev")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12552, 0.512348, 2.82833)
@@ -92,17 +104,86 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_i0el8")
 
 [node name="Mamie" parent="." instance=ExtResource("4_71x0h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54142, 0)
+transform = Transform3D(0.0624595, 0, 0.998047, 0, 1, 0, -0.998047, 0, 0.0624595, -2.29145, 0.324789, 0.617496)
 
 [node name="PhantomCamera3D" type="Node3D" parent="."]
-transform = Transform3D(0.469472, 0.352075, -0.809716, 0, 0.91706, 0.398749, 0.882948, -0.187201, 0.430534, -3.68665, 2.26247, 2.52052)
+transform = Transform3D(0.469472, 0.352075, -0.809716, 0, 0.91706, 0.398749, 0.882948, -0.187201, 0.430534, -2.597, 1.857, 1.496)
 script = ExtResource("5_ujcro")
 priority = 1
 tween_resource = SubResource("Resource_xu6x1")
 camera_3d_resource = SubResource("Resource_60lqh")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.469472, 0.352075, -0.809716, 0, 0.91706, 0.398749, 0.882948, -0.187201, 0.430534, -3.68665, 2.26247, 2.52052)
+transform = Transform3D(0.469472, 0.352075, -0.809716, 0, 0.91706, 0.398749, 0.882948, -0.187201, 0.430534, -2.597, 1.857, 1.496)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("8_rf8qc")
+
+[node name="Dehors_ambiance" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("9_7qqcf")
+autoplay = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1438.0
+offset_top = 369.0
+offset_right = 1838.0
+offset_bottom = 576.0
+theme_override_font_sizes/normal_font_size = 80
+theme_override_font_sizes/bold_font_size = 80
+bbcode_enabled = true
+text = "[b] F    I    N [/b]"
+
+[node name="Credit" type="RichTextLabel" parent="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1156.0
+offset_top = 591.0
+offset_right = 1564.0
+offset_bottom = 814.0
+theme_override_font_sizes/normal_font_size = 21
+text = "Meunier Aurélien - Game Design
+Decaesteker Elise - Programmation
+Martinez Ben - 3D
+Ferrand Grégoire - 3D
+Fuentes Florent - Sound design
+
+Réalisé pour une jam sur une semaine"
+
+[node name="End_musique" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("11_qhejl")
+bus = &"End_musique"
+
+[node name="Kaki_4" parent="." instance=ExtResource("12_h2chm")]
+transform = Transform3D(0.00795551, 0, 0.099683, 0, 0.1, 0, -0.099683, 0, 0.00795551, -1.80875, 0.28991, 0.854787)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+autostart = true
+
+[node name="Timer_FIN" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer_FIN" to="." method="_on_timer_fin_timeout"]

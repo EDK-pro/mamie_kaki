@@ -85,8 +85,8 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -704.0
 offset_top = -426.0
-offset_right = 85.0
-offset_bottom = -169.0
+offset_right = 235.0
+offset_bottom = -57.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("1_16yys")
@@ -97,9 +97,11 @@ modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 61.0
 offset_top = 72.0
-offset_right = 685.0
-offset_bottom = 194.0
+offset_right = 856.0
+offset_bottom = 302.0
 mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
 text = "Souvenirs de mamies..."
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
